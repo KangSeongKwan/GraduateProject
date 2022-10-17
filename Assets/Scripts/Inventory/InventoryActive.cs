@@ -5,22 +5,19 @@ using UnityEngine;
 public class InventoryActive : MonoBehaviour
 {
     public GameObject inventoryPanel;
-    bool activeInventory = false;
+    public bool activeInventory = false;
 
     // Start is called before the first frame update
-    private void Start()
-    {
-        inventoryPanel.SetActive(activeInventory);
-
-    }
 
     // Update is called once per frame
     private void Update()
     {
+        inventoryPanel.SetActive(activeInventory);
         if (Input.GetKeyDown(KeyCode.I))
         {
-            activeInventory = !activeInventory;
-            inventoryPanel.SetActive(activeInventory);
+            if (!GameObject.Find("player").GetComponent<EnemyContact>().delete_on && !GameObject.Find("player").GetComponent<EnemyContact>().swap_on)
+                activeInventory = !activeInventory;
         }
+
     }
 }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Click_Move : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2.5f;
     public Transform movePoint;
 
     public LayerMask Stopmovement;  //주변에 있는지 확인 하기 위해 벽 layer를 받아 오기 위함
-    public bool click = false;  
+    public bool click = false;
     public GameObject[] button = new GameObject[4]; //이동 버튼들을 받아옴
     // Start is called before the first frame update
     void Start()    //시작 할때 모든 이동 버튼 비활성화
     {
         movePoint.parent = null;
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
-            button[i].SetActive(false); 
+            button[i].SetActive(false);
         }
     }
 
@@ -54,6 +54,10 @@ public class Click_Move : MonoBehaviour
 
                 }
             }
+        }
+        else
+        {
+            Buttonoff();
         }
     }
 

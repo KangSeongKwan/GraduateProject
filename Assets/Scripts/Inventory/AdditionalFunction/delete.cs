@@ -1,10 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class delete : MonoBehaviour
 {
+    public int dnum;
+    public Button No_Button_delete;
+    public Button OK_Button_delete;
+    public int Changedel = 0;
+    private void Start()
+    {
+        OK_Button_delete.gameObject.SetActive(false);
+        No_Button_delete.gameObject.SetActive(false);
+    }
 
+    private void Update()
+    {
+        if (Changedel == 1)
+        {
+            OK_Button_delete.gameObject.SetActive(true);
+            No_Button_delete.gameObject.SetActive(true);
+        }
+    }
     public void del(int count, List<Item> item_Item, List<string> item_string)
     {
         del_list(count, item_Item);
@@ -18,5 +36,20 @@ public class delete : MonoBehaviour
     public void del_string(int count, List<string> item_)
     {
         item_.RemoveAt(count);
+    }
+    public void delete_button_on()
+    {
+        del(dnum, GameObject.Find("Inventory").GetComponent<Inventory>().items, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
+        GameObject.Find("player").GetComponent<EnemyContact>().delete_on = false;
+        OK_Button_delete.gameObject.SetActive(false);
+        No_Button_delete.gameObject.SetActive(false);
+        GameObject.Find("player").GetComponent<Click_Move>().click = true;
+        Changedel = 0;
+    }
+    public void button_off()
+    {
+        OK_Button_delete.gameObject.SetActive(false);
+        No_Button_delete.gameObject.SetActive(false);
+        Changedel = 0;
     }
 }

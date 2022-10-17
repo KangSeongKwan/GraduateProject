@@ -27,6 +27,7 @@ public class ItemSelect : MonoBehaviour
     {
         if (other.gameObject.tag == "event")
         {
+            GameObject.Find("player").GetComponent<Click_Move>().click = false;
             Destroy(other.gameObject);
             CreateReward();
         }
@@ -36,7 +37,7 @@ public class ItemSelect : MonoBehaviour
         int i = 0;
         for (; i < 3; i++)
         {
-            //±×·¯¹Ç·Î Field¿¡ ¿ÀºêÁ§Æ®¸¦ ¹èÄ¡ÇÏ´Â ÀÛ¾÷À» ¿Ï·áÇÑ Object¸¦ »èÁ¦ÇØ¾ß ¿¡·¯°¡ ¾È³²
+            //ï¿½×·ï¿½ï¿½Ç·ï¿½ Fieldï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ Objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½
             Destroy(Instantiates[i]);
         }
         items.Clear();
@@ -64,7 +65,7 @@ public class ItemSelect : MonoBehaviour
             }
 
         }
-        //playerÀÇ prefabs¿¡ µî·ÏµÇ¾îÀÖ´Â °ÍÀº ÇÊµå¿¡ ÀÖ´Â°Ô ¾Æ´Ï¶ó Sample ObjectÀÓ
+        //playerï¿½ï¿½ prefabsï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Êµå¿¡ ï¿½Ö´Â°ï¿½ ï¿½Æ´Ï¶ï¿½ Sample Objectï¿½ï¿½
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);

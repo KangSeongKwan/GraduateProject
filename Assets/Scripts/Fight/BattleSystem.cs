@@ -23,9 +23,10 @@ public class BattleSystem : MonoBehaviour
 	public BattleHUD enemyHUD;
 
 	public BattleState state;
-
-	// Start is called before the first frame update
-	void Start()
+    public int EnemyHP = 0;
+    
+    // Start is called before the first frame update
+    void Start()
     {
 		GameObject.Find("Battle System").SetActive(false);
     }
@@ -51,9 +52,9 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerAttack()
 	{
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-
+        BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
         enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+		dialogueText.text = "The attack damage : " + BDC.FinalDamage;
 
 		yield return new WaitForSeconds(2f);
 
@@ -70,11 +71,11 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator EnemyTurn()
 	{
-		dialogueText.text = enemyUnit.unitName + " attacks!";
+		dialogueText.text = enemyUnit.unitName + "attacks! (damage : " + enemyUnit.damage + ")";
 
 		yield return new WaitForSeconds(1f);
 
-		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+		bool isDead = playerUnit.TakeEdamage(enemyUnit.damage);
 
 		playerHUD.SetHP(playerUnit.currentHP);
 
@@ -117,9 +118,9 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerHeal()
 	{
 		playerUnit.Heal();
-
-		playerHUD.SetHP(playerUnit.currentHP);
-		dialogueText.text = "You feel renewed strength!";
+        BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
+        playerHUD.SetHP(playerUnit.currentHP);
+		dialogueText.text = "Heal : " + BDC.FinalHeal;
 
 		yield return new WaitForSeconds(2f);
 
@@ -148,4 +149,8 @@ public class BattleSystem : MonoBehaviour
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
 	}
+    public void Update()
+    {
+        EnemyHP = enemyUnit.currentHP;
+    }
 }

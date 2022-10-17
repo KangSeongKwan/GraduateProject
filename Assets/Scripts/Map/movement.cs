@@ -24,8 +24,9 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (click) { 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+        if (GameObject.Find("player").GetComponent<Click_Move>().click)
+        {
             if (player_random.move_point != 0)
             {
                 if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -55,9 +56,10 @@ public class movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "dark")
+        if (other.gameObject.tag == "dark")
         {
             Destroy(other.gameObject);
         }
     }
 }
+

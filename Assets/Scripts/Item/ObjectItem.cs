@@ -19,6 +19,7 @@ public class ObjectItem : MonoBehaviour, IObjectItem
 
     public Item ClickItem()
     {
+        GameObject.Find("player").GetComponent<Click_Move>().click = true;
         return this.item;
     }
     public void SetItem(Item _item)

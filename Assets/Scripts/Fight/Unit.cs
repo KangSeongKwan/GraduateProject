@@ -12,6 +12,15 @@ public class Unit : MonoBehaviour
 	public int maxHP;
 	public int currentHP;
 
+    public bool TakeEdamage(int dmg)
+    {
+        currentHP -= dmg;
+        if (currentHP <= 0)
+            return true;
+        else
+            return false;
+    }
+
 	public bool TakeDamage(int dmg)
 	{
         currentHP -= dmg + GameObject.Find("Battle System").GetComponent<BattleDamageCalc>().FinalDamageWithCard();
