@@ -6,6 +6,7 @@ public class ItemSelect : MonoBehaviour
 {
     public static List<GameObject> items = new List<GameObject>();
     public GameObject[] prefabs;
+    public GameObject[] storePrefabs;
     public GameObject[] Instantiates;
     public movement movement;
     public Transform Pposition;
@@ -30,6 +31,13 @@ public class ItemSelect : MonoBehaviour
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
             Destroy(other.gameObject);
             CreateReward();
+        }
+
+        if (other.gameObject.tag == "store")
+        {
+            GameObject.Find("player").GetComponent<Click_Move>().click = false;
+            Destroy(other.gameObject);
+            CreateStore();
         }
     }
     public void DeleteItemList()
@@ -58,6 +66,34 @@ public class ItemSelect : MonoBehaviour
                     break;
                 case 3:
                     items.Add(prefabs[2]);
+                    break;
+                default:
+                    Debug.Log("Error");
+                    break;
+            }
+
+        }
+        //player�� prefabs�� ��ϵǾ��ִ� ���� �ʵ忡 �ִ°� �ƴ϶� Sample Object��
+        Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
+        Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
+        Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+    }
+
+    public void CreateStore()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            SpawnObj = Random.Range(1, 4);
+            switch (SpawnObj)
+            {
+                case 1:
+                    items.Add(storePrefabs[0]);
+                    break;
+                case 2:
+                    items.Add(storePrefabs[1]);
+                    break;
+                case 3:
+                    items.Add(storePrefabs[2]);
                     break;
                 default:
                     Debug.Log("Error");

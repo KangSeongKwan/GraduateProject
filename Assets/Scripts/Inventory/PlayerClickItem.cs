@@ -9,6 +9,7 @@ public class PlayerClickItem : MonoBehaviour
     [Header("인벤토리")]
     public Inventory inventory;
     public List<string> item_array;
+    public string clickItemName;
     
     void Update()
     {
@@ -35,6 +36,8 @@ public class PlayerClickItem : MonoBehaviour
         {
             Item item = clickInterface.ClickItem();
             print($"{item.itemName}");
+            clickItemName = item.itemName;
+            GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
             inventory.AddItem(item);
             item_array.Add(item.abc);
             //오브젝트 삭제는 여기서 해야함

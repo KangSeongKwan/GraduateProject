@@ -12,6 +12,7 @@ public class Unit : MonoBehaviour
 	public int maxHP;
 	public int currentHP;
 
+	public string storeItemName;
     public bool TakeEdamage(int dmg)
     {
         currentHP -= dmg;
@@ -38,4 +39,20 @@ public class Unit : MonoBehaviour
 			currentHP = maxHP;
 	}
 
+	public void UseStore()
+    {
+		storeItemName = GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemName;
+		if(storeItemName == "PlusMax")
+        {
+			currentHP -= 10;
+        }
+		if (storeItemName == "PlusMiddle")
+		{
+			currentHP -= 7;
+		}
+		if (storeItemName == "PlusSmall")
+		{
+			currentHP -= 4;
+		}
+	}
 }
