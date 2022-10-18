@@ -10,7 +10,7 @@ public class PlayerClickItem : MonoBehaviour
     public Inventory inventory;
     public List<string> item_array;
     public string clickItemName;
-    
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
