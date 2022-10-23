@@ -9,4 +9,6 @@ public class Item : ScriptableObject
     public Sprite itemImage;
     public Item item;
     public string abc;
+    public string rank;
+    public string condition;
 }

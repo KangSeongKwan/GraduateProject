@@ -10,6 +10,8 @@ public class PlayerClickItem : MonoBehaviour
     public Inventory inventory;
     public List<string> item_array;
     public string clickItemName;
+    public int aaa;
+    public Item sitem;
 
     void Update()
     {
@@ -37,9 +39,19 @@ public class PlayerClickItem : MonoBehaviour
             Item item = clickInterface.ClickItem();
             print($"{item.itemName}");
             clickItemName = item.itemName;
-            GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
-            inventory.AddItem(item);
-            item_array.Add(item.abc);
+            if (aaa == 0)
+            {
+                sitem = item;
+                inventory.AddSslot(item);
+                Debug.Log(inventory.sslot.item.condition);
+                aaa++;
+            }
+            else
+            {
+                GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
+                inventory.AddItem(item);
+                item_array.Add(item.abc);
+            }
             //오브젝트 삭제는 여기서 해야함
             GameObject.Find("player").GetComponent<ItemSelect>().DeleteItemList();
             //이유 : HitCheckObject에서 클릭 이벤트를 처리해주므로, 여기서 인벤토리 반영과 동시에 파괴를 처리하면됨

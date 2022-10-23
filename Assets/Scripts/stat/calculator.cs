@@ -33,4 +33,28 @@ public class calculator : MonoBehaviour
         }
         return summ;
     }
+    public int Cal1(int sum, string abc)
+    {
+        int a;
+        string b;
+        b = abc.Substring(0, 1);
+        a = int.Parse(abc.Substring(1, 1));
+
+        switch (b)
+        {
+            case "*":
+                sum *= a;
+                break;
+            case "/":
+                sum /= a;
+                break;
+            case "+":
+                sum += a;
+                break;
+            case "-":
+                sum -= a;
+                break;
+        }
+        return sum;
+    }
 }

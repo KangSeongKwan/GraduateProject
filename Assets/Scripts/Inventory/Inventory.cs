@@ -12,6 +12,8 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public Slot[] slots;
     public int count;
+    public SSlot sslot;
+    public Item sitem;
     private void OnValidate()
     {
         slots = slotParent.GetComponentsInChildren<Slot>();
@@ -47,4 +49,10 @@ public class Inventory : MonoBehaviour
             print("슬롯이 가득 차 있습니다.");
         }
     }
+    public void AddSslot(Item _item)
+    {
+        sitem = _item;
+        sslot.item = _item;
+    }
 }
+//수정함
