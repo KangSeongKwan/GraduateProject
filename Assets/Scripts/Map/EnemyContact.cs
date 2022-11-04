@@ -7,6 +7,7 @@ public class EnemyContact : MonoBehaviour
 
     public bool delete_on = false;
     public bool swap_on = false;
+  
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,6 +28,11 @@ public class EnemyContact : MonoBehaviour
             GameObject.Find("CanvasInventory").GetComponent<InventoryActive>().activeInventory = true;
             swap_on = true;
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
+        }
+        if (other.gameObject.tag == "Heal")
+        {
+            Destroy(other.gameObject);
+            GameObject.Find("PlayerStat").GetComponent<Unit>().HealField();
         }
     }
 }

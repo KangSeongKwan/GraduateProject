@@ -11,6 +11,8 @@ TagManager:
   - miniCam
   - dark
   - store
+  - heal
+  - Heal
   layers:
   - Default
   - TransparentFX

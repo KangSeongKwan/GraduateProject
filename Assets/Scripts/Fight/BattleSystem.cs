@@ -109,7 +109,7 @@ public class BattleSystem : MonoBehaviour
 
 	void PlayerTurn()
 	{
-		dialogueText.text = "Choose an action:";
+		dialogueText.text = "Choose an action!!";
 		Debug.Log("Player turn");
         GameObject.Find("Battle System").GetComponent<BattleSelectItem>().SetCard();
     }

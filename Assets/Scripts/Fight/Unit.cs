@@ -13,6 +13,9 @@ public class Unit : MonoBehaviour
 	public int currentHP;
 
 	public string storeItemName;
+
+	public int ADDHeal = 0;
+	
 	public bool TakeEdamage(int dmg)
     {
         currentHP -= dmg;
@@ -54,5 +57,15 @@ public class Unit : MonoBehaviour
 		{
 			currentHP -= 4;
 		}
+	}
+
+	public void HealField()
+    {
+		ADDHeal = (maxHP / 10) * 3;
+		currentHP += ADDHeal;
+		if(currentHP >= maxHP)
+        {
+			currentHP = maxHP;
+        }
 	}
 }

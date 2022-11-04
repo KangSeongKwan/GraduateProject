@@ -9,20 +9,22 @@ public class ItemSelect : MonoBehaviour
     public GameObject[] storePrefabs;
     public GameObject[] Instantiates;
     public GameObject[] Special;
+    public GameObject[] healPrefabs;
     public movement movement;
     public Transform Pposition;
+    public int[] weight_reward;
     float PposX;
     Vector3 Ppos0;
     Vector3 Ppos1;
     Vector3 Ppos2;
     int SpawnObj;
+
     private void Start()
     {
         Ppos1 = transform.position;
         Ppos0 = transform.position + new Vector3(-2, 0, 0);
         Ppos2 = transform.position + new Vector3(2, 0, 0);
         CreateSpecial();
-
     }
     void Update()
     {
@@ -84,7 +86,29 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        /* 가중치급나어려워ㅓ어어어어어어어엉ㄺ
+        int weightReward = 0;
+        int selectNum = 0;
+        int instantiateIndex = 0;
+        int total = 0;
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            //weight_reward = 
+            total += weight_reward[i];
+        }
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            selectNum = Mathf.RoundToInt(total * Random.Range(0.0f, 1.0f));
+            weightReward += weight_reward[i];
+            if (selectNum <= weightReward)
+            {
+                Instantiates[instantiateIndex] = Instantiate(items[instantiateIndex], Ppos0, Quaternion.identity);
+            }
+        }
+        */
     }
+
     public void CreateSpecial()
     {
         for (int i = 0; i < 3; i++)
@@ -93,13 +117,13 @@ public class ItemSelect : MonoBehaviour
             switch (SpawnObj)
             {
                 case 1:
-                    items.Add(prefabs[0]);
+                    items.Add(Special[0]);
                     break;
                 case 2:
-                    items.Add(prefabs[1]);
+                    items.Add(Special[1]);
                     break;
                 case 3:
-                    items.Add(prefabs[2]);
+                    items.Add(Special[2]);
                     break;
                 default:
                     Debug.Log("Error");
@@ -107,9 +131,9 @@ public class ItemSelect : MonoBehaviour
             }
 
         }
-        Instantiates[0] = Instantiate(Special[0], Ppos0, Quaternion.identity);
-        Instantiates[1] = Instantiate(Special[1], Ppos1, Quaternion.identity);
-        Instantiates[2] = Instantiate(Special[2], Ppos2, Quaternion.identity);
+        Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
+        Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
+        Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
     }
 
     public void CreateStore()

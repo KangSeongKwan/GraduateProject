@@ -3,6 +3,7 @@ using System;
 
 // Project 창에서 Item 객체 생성해주는 스크립트
 [CreateAssetMenu]
+[System.Serializable]
 public class Item : ScriptableObject
 {
     public string itemName;

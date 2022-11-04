@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5808919891948101674}
   - component: {fileID: -8594762318836766749}
   - component: {fileID: -693477472505132952}
+  - component: {fileID: -7188287401614927889}
   m_Layer: 0
   m_Name: goldcard
   m_TagString: Untagged
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 88cb4bf24f871b84baf0942b9ecf4263, type: 2}
   image: {fileID: 5908494521470756810}
+--- !u!114 &-7188287401614927889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292769390797958622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d405643984bbc4fb182933d9dc0d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 15

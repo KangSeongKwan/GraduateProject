@@ -18,3 +18,4 @@ MonoBehaviour:
   abc: +5
   rank: Rare
   condition: Even
+  weight: 40

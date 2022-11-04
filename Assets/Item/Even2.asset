@@ -18,3 +18,4 @@ MonoBehaviour:
   abc: '*2'
   rank: Unique
   condition: Even
+  weight: 20
