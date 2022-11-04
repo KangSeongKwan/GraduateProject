@@ -17,19 +17,22 @@ public class RandomCard : MonoBehaviour
         {
             rewardItems[i] = rewardList.GetRandom();
         }
+        Debug.Log("Weight Insert Succeed");
     }
     public void ShowStoreItem()
     {
         for (int i = 0; i < 3; i++)
         {
-            storeItems[i] = rewardList.GetRandom();
+            storeItems[i] = storeList.GetRandom();
         }
+        Debug.Log("Weight Insert Succeed");
     }
     public void ShowArtifactItem()
     {
         for (int i = 0; i < 3; i++)
         {
-            artifactItems[i] = rewardList.GetRandom();
+            artifactItems[i] = artifactList.GetRandom();
         }
+        Debug.Log("Weight Insert Succeed");
     }
 }

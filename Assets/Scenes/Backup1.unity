@@ -3865,7 +3865,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761615eb8b86ef74ea4413f64a233b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeightedItem: []
+  WeightedItem:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  WeightedStore:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  WeightedArtifact:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Instantiates:
   - {fileID: 0}
   - {fileID: 0}

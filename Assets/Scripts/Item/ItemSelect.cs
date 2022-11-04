@@ -6,6 +6,8 @@ public class ItemSelect : MonoBehaviour
 {
     public static List<GameObject> items = new List<GameObject>();
     public GameObject[] WeightedItem;
+    public GameObject[] WeightedStore;
+    public GameObject[] WeightedArtifact;
     public GameObject[] Instantiates;
     public movement movement;
     public Transform Pposition;
@@ -72,11 +74,11 @@ public class ItemSelect : MonoBehaviour
     
     public void CreateSpecial()
     {
-        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowStoreItem();
-        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().storeItems;
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowArtifactItem();
+        WeightedArtifact = GameObject.Find("RandomCard").GetComponent<RandomCard>().artifactItems;
         for (int i = 0; i < 3; i++)
         {
-            items.Add(WeightedItem[i]);
+            items.Add(WeightedArtifact[i]);
         }
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
@@ -85,11 +87,11 @@ public class ItemSelect : MonoBehaviour
 
     public void CreateStore()
     {
-        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowArtifactItem();
-        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().artifactItems;
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowStoreItem();
+        WeightedStore = GameObject.Find("RandomCard").GetComponent<RandomCard>().storeItems;
         for (int i = 0; i < 3; i++)
         {
-            items.Add(WeightedItem[i]);
+            items.Add(WeightedStore[i]);
         }
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
