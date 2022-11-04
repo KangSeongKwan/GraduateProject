@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2552635283848103999}
   - component: {fileID: -5361521093799875984}
   m_Layer: 0
-  m_Name: woodcard
+  m_Name: woodCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

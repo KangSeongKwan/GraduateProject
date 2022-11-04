@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -743200870801606291}
   - component: {fileID: -5166174312057135980}
   m_Layer: 0
-  m_Name: ironcard
+  m_Name: ironCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -39,6 +39,7 @@ public class PlayerClickItem : MonoBehaviour
             Item item = clickInterface.ClickItem();
             print($"{item.itemName}");
             clickItemName = item.itemName;
+
             if (aaa == 0)
             {
                 sitem = item;

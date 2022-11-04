@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -693477472505132952}
   - component: {fileID: -7188287401614927889}
   m_Layer: 0
-  m_Name: goldcard
+  m_Name: goldCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

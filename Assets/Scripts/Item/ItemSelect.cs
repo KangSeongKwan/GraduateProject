@@ -5,14 +5,10 @@ using UnityEngine;
 public class ItemSelect : MonoBehaviour
 {
     public static List<GameObject> items = new List<GameObject>();
-    public GameObject[] prefabs;
-    public GameObject[] storePrefabs;
+    public GameObject[] WeightedItem;
     public GameObject[] Instantiates;
-    public GameObject[] Special;
-    public GameObject[] healPrefabs;
     public movement movement;
     public Transform Pposition;
-    public int[] weight_reward;
     float PposX;
     Vector3 Ppos0;
     Vector3 Ppos1;
@@ -63,73 +59,24 @@ public class ItemSelect : MonoBehaviour
 
     public void CreateReward()
     {
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowRewardItem();
+        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().rewardItems;
         for (int i = 0; i < 3; i++)
         {
-            SpawnObj = Random.Range(1, 4);
-            switch (SpawnObj)
-            {
-                case 1:
-                    items.Add(prefabs[0]);
-                    break;
-                case 2:
-                    items.Add(prefabs[1]);
-                    break;
-                case 3:
-                    items.Add(prefabs[2]);
-                    break;
-                default:
-                    Debug.Log("Error");
-                    break;
-            }
-
+            items.Add(WeightedItem[i]);
         }
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
-        /* 가중치급나어려워ㅓ어어어어어어어엉ㄺ
-        int weightReward = 0;
-        int selectNum = 0;
-        int instantiateIndex = 0;
-        int total = 0;
-        for (int i = 0; i < prefabs.Length; i++)
-        {
-            //weight_reward = 
-            total += weight_reward[i];
-        }
-
-        for (int i = 0; i < prefabs.Length; i++)
-        {
-            selectNum = Mathf.RoundToInt(total * Random.Range(0.0f, 1.0f));
-            weightReward += weight_reward[i];
-            if (selectNum <= weightReward)
-            {
-                Instantiates[instantiateIndex] = Instantiate(items[instantiateIndex], Ppos0, Quaternion.identity);
-            }
-        }
-        */
     }
-
+    
     public void CreateSpecial()
     {
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowStoreItem();
+        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().storeItems;
         for (int i = 0; i < 3; i++)
         {
-            SpawnObj = Random.Range(1, 4);
-            switch (SpawnObj)
-            {
-                case 1:
-                    items.Add(Special[0]);
-                    break;
-                case 2:
-                    items.Add(Special[1]);
-                    break;
-                case 3:
-                    items.Add(Special[2]);
-                    break;
-                default:
-                    Debug.Log("Error");
-                    break;
-            }
-
+            items.Add(WeightedItem[i]);
         }
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
@@ -138,27 +85,12 @@ public class ItemSelect : MonoBehaviour
 
     public void CreateStore()
     {
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowArtifactItem();
+        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().artifactItems;
         for (int i = 0; i < 3; i++)
         {
-            SpawnObj = Random.Range(1, 4);
-            switch (SpawnObj)
-            {
-                case 1:
-                    items.Add(storePrefabs[0]);
-                    break;
-                case 2:
-                    items.Add(storePrefabs[1]);
-                    break;
-                case 3:
-                    items.Add(storePrefabs[2]);
-                    break;
-                default:
-                    Debug.Log("Error");
-                    break;
-            }
-
+            items.Add(WeightedItem[i]);
         }
-        //player�� prefabs�� ��ϵǾ��ִ� ���� �ʵ忡 �ִ°� �ƴ϶� Sample Object��
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
