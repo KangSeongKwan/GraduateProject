@@ -16,7 +16,7 @@ public class BattleSystem : MonoBehaviour
 	public Transform enemyBattleStation;
 	Unit playerUnit;
 	Unit enemyUnit;
-	
+	SoundManager SoundEffect;
 	public Text dialogueText;
 
 	public BattleHUD playerHUD;
@@ -50,14 +50,28 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
+		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
         enemyHUD.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack damage : " + BDC.FinalDamage;
 
+		if(BDC.FinalDamage <= 50)
+        {
+			SoundEffect.SFXPlay("audioPAttack");
+		}
+		else if(BDC.FinalDamage > 50)
+        {
+			SoundEffect.SFXPlay("audioPBigAtk");
+		}
+		else if(BDC.FinalDamage > 100)
+        {
+			SoundEffect.SFXPlay("audioPCriticalAtk");
+		}
+
 		yield return new WaitForSeconds(2f);
 
-		if(isDead)
+		if (isDead)
 		{
 			state = BattleState.WON;
 			EndBattle();
@@ -71,7 +85,8 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator EnemyTurn()
 	{
 		dialogueText.text = enemyUnit.unitName + "attacks! (damage : " + enemyUnit.damage + ")";
-
+		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+		SoundEffect.SFXPlay("audioEAttack");
 		yield return new WaitForSeconds(1f);
 
 		bool isDead = playerUnit.TakeEdamage(enemyUnit.damage);
@@ -117,7 +132,9 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerHeal()
 	{
 		playerUnit.Heal();
-        BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
+		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+		SoundEffect.SFXPlay("audioPHeal");
+		BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
         playerHUD.SetHP(playerUnit.currentHP);
 		dialogueText.text = "Heal : " + BDC.FinalHeal;
 

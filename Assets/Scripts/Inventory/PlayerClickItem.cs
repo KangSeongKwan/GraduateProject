@@ -12,6 +12,7 @@ public class PlayerClickItem : MonoBehaviour
     public string clickItemName;
     public int aaa;
     public Item sitem;
+    SoundManager SoundEffect;
 
     void Update()
     {
@@ -33,11 +34,13 @@ public class PlayerClickItem : MonoBehaviour
     void HitCheckObject(RaycastHit2D hit)
     {
         IObjectItem clickInterface = hit.transform.gameObject.GetComponent<IObjectItem>();
-
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        
         if (clickInterface != null)
         {
             Item item = clickInterface.ClickItem();
             print($"{item.itemName}");
+            SoundEffect.SFXPlay("audioCardSelect");
             clickItemName = item.itemName;
 
             if (aaa == 0)

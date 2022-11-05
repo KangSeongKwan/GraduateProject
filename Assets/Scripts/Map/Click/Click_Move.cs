@@ -92,4 +92,11 @@ public class Click_Move : MonoBehaviour
         player_random.move_point--; // 이동수 차감
         Buttonoff();
     }
+    public void ButtonSetFalse()
+    {
+        for (int i=0; i<4; i++)
+        {
+            button[i].SetActive(false);
+        }
+    }
 }

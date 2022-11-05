@@ -7,6 +7,9 @@ public class player_random : MonoBehaviour
     public static int move_point = 0;
     public int max_count = 6;
     public Text count_text;
+    SoundManager SoundEffect;
+    int Randomobj;
+
     void Update()
     {
         count_text.text = move_point.ToString();
@@ -20,6 +23,25 @@ public class player_random : MonoBehaviour
             {
                 move_point = Random.Range(1, max_count);
                 max_count++;
+                Randomobj = Random.Range(1, 4);
+
+                switch (Randomobj)
+                {
+                    case 1:
+                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                        SoundEffect.SFXPlay("audioDice1");
+                        break;
+
+                    case 2:
+                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                        SoundEffect.SFXPlay("audioDice2");
+                        break;
+
+                    case 3:
+                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                        SoundEffect.SFXPlay("audioDice3");
+                        break;
+                }
             }
         }
     }

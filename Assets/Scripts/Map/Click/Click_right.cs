@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Click_right : MonoBehaviour    // 클릭 시 위로 이동
 {
+    SoundManager SoundEffect;
     private void OnMouseDown()
     {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        SoundEffect.SFXPlay("audioMove");
         GameObject.Find("player").GetComponent<Click_Move>().ButtonRight(); //이동 스크립트에 존재하는 모든 버튼 다 비활성화 함수
     }
 }

@@ -11,7 +11,7 @@ public class Unit : MonoBehaviour
 
 	public int maxHP;
 	public int currentHP;
-
+	SoundManager SoundEffect;
 	public string storeItemName;
 
 	public int ADDHeal = 0;
@@ -61,6 +61,8 @@ public class Unit : MonoBehaviour
 
 	public void HealField()
     {
+		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+		SoundEffect.SFXPlay("audioHealCenter");
 		ADDHeal = (maxHP / 10) * 3;
 		currentHP += ADDHeal;
 		if(currentHP >= maxHP)

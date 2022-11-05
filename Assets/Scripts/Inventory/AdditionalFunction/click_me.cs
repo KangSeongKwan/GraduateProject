@@ -10,6 +10,8 @@ public class click_me : MonoBehaviour, IPointerClickHandler
     public int array;
     public int ChangeCnt;
     public Text warning_ms;
+    SoundManager SoundEffect;
+
     void Start()
     {
         warning_ms.gameObject.SetActive(false);
@@ -32,6 +34,7 @@ public class click_me : MonoBehaviour, IPointerClickHandler
     }
     private void Click_switch()
     {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         num = clickObject.name.Remove(0, 5);
         switch (num)
@@ -48,7 +51,10 @@ public class click_me : MonoBehaviour, IPointerClickHandler
         if (ChangeCnt == 0)
         {
             if (GameObject.Find("player").GetComponent<PlayerClickItem>().item_array.Count - 1 >= array)
+            {
                 GameObject.Find("Inventory").GetComponent<Switch>().Cnum1 = array;
+                SoundEffect.SFXPlay("audioIChange");
+            }
             else
             {
                 warning_ms.gameObject.SetActive(true);
@@ -58,7 +64,11 @@ public class click_me : MonoBehaviour, IPointerClickHandler
         else if (ChangeCnt == 1)
         {
             if (GameObject.Find("player").GetComponent<PlayerClickItem>().item_array.Count - 1 >= array)
+            {
                 GameObject.Find("Inventory").GetComponent<Switch>().Cnum2 = array;
+                SoundEffect.SFXPlay("audioIChange");
+            }
+                
             else
             {
                 warning_ms.gameObject.SetActive(true);
@@ -69,6 +79,7 @@ public class click_me : MonoBehaviour, IPointerClickHandler
 
     private void delete()
     {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         num = clickObject.name.Remove(0, 5);
         switch (num)
@@ -84,6 +95,7 @@ public class click_me : MonoBehaviour, IPointerClickHandler
         }
         if (GameObject.Find("player").GetComponent<PlayerClickItem>().item_array.Count - 1 >= array)
         {
+            SoundEffect.SFXPlay("audioIDiscard");
             GameObject.Find("Inventory").GetComponent<delete>().dnum = array;
             GameObject.Find("Inventory").GetComponent<delete>().Changedel = 1;
         }
