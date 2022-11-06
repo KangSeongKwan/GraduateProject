@@ -44,46 +44,51 @@ public class Unit : MonoBehaviour
 	public void UseStore()
 	{
 		int a;
+		string b;
 		storeItemName = GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemName;
 		a = int.Parse(storeItemName.Substring(4, 1));
-
-		switch(a)
-        {
-			case 9:
-				currentHP -= 10;
-				break;
-
-			case 8:
-				currentHP -= 7;
-				break;
-
-			case 7:
-				currentHP -= 7;
-				break;
-
-			case 6:
-				currentHP -= 7;
-				break;
-
-			case 5:
-				currentHP -= 4;
-				break;
-
-			case 4:
-				currentHP -= 4;
-				break;
-
-			case 3:
-				currentHP -= 4;
-				break;
-
-			case 2:
-				currentHP -= 4;
-				break;
-
-			case 1:
-				currentHP -= 4;
-				break;
+		b = storeItemName.Substring(0, 4);
+		if (b == "Mult")
+		{
+			switch (a)
+			{
+				case 9:
+					currentHP -= 30;
+					break;
+				case 8:
+				case 7:
+				case 6:
+				case 5:
+					currentHP -= 25;
+					break;
+				case 4:
+				case 3:
+				case 2:
+				case 1:
+					currentHP -= 20;
+					break;
+			}
+		}
+		else if (b == "Plus")
+		{
+			switch (a)
+			{
+				case 9:
+					currentHP -= 15;
+					break;
+				case 8:
+				case 7:
+				case 6:
+				case 5:
+					currentHP -= 10;
+					break;
+				case 4:
+				case 3:
+				case 2:
+				case 1:
+					currentHP -= 5;
+					break;
+			}
 		}
 	}
 
