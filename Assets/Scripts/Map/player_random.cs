@@ -23,6 +23,7 @@ public class player_random : MonoBehaviour
             {
                 move_point = Random.Range(1, max_count);
                 max_count++;
+                GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
                 Randomobj = Random.Range(1, 4);
 
                 switch (Randomobj)
