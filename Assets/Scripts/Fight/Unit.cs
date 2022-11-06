@@ -6,7 +6,6 @@ public class Unit : MonoBehaviour
 {
 	public string unitName;
 	public int unitLevel;
-
 	public int damage;
 
 	public int maxHP;
@@ -44,18 +43,47 @@ public class Unit : MonoBehaviour
 
 	public void UseStore()
 	{
+		int a;
 		storeItemName = GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemName;
-		if (storeItemName == "PlusMax")
-		{
-			currentHP -= 10;
-		}
-		if (storeItemName == "PlusMiddle")
-		{
-			currentHP -= 7;
-		}
-		if (storeItemName == "PlusSmall")
-		{
-			currentHP -= 4;
+		a = int.Parse(storeItemName.Substring(4, 1));
+
+		switch(a)
+        {
+			case 9:
+				currentHP -= 10;
+				break;
+
+			case 8:
+				currentHP -= 7;
+				break;
+
+			case 7:
+				currentHP -= 7;
+				break;
+
+			case 6:
+				currentHP -= 7;
+				break;
+
+			case 5:
+				currentHP -= 4;
+				break;
+
+			case 4:
+				currentHP -= 4;
+				break;
+
+			case 3:
+				currentHP -= 4;
+				break;
+
+			case 2:
+				currentHP -= 4;
+				break;
+
+			case 1:
+				currentHP -= 4;
+				break;
 		}
 	}
 

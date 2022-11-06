@@ -12,4 +12,5 @@ public class Item : ScriptableObject
     public string abc;
     public string rank;
     public string condition;
+    public string tag; // 없으면 에러남
 }

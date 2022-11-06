@@ -52,7 +52,10 @@ public class PlayerClickItem : MonoBehaviour
             }
             else
             {
-                GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
+                if(item.tag == "store")
+                {
+                    GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
+                }
                 inventory.AddItem(item);
                 item_array.Add(item.abc);
             }
