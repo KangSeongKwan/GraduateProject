@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
   m_Name: Epic
   m_EditorClassIdentifier: 
-  itemName: Odd
+  itemName: Even
   itemImage: {fileID: 21300000, guid: a4bdb0404f71c174084dc367ae44623d, type: 3}
   item: {fileID: 0}
   abc: +8
-  rank: Epic
+  rank: Even
   condition: Even
   tag: artifact

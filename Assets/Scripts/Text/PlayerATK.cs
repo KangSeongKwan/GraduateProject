@@ -9,7 +9,7 @@ public class PlayerATK : MonoBehaviour
     public int InventoryDamage;
     void Update()
     {
-        InventoryDamage = GameObject.Find("player").GetComponent<calculator>().cal(1, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
+        InventoryDamage = GameObject.Find("player").GetComponent<calculator>().cal(0, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
         ATK.text = "ATK : " + InventoryDamage.ToString();
     }
 }

@@ -20,13 +20,14 @@ public class ItemSelect : MonoBehaviour
 
     private int count = 0;
 
-    private void Start()
+    void Start()
     {
         Ppos1 = transform.position;
         Ppos0 = transform.position + new Vector3(-2, 0, 0);
         Ppos2 = transform.position + new Vector3(2, 0, 0);
         CreateSpecial();
     }
+
     void Update()
     {
         Ppos1 = transform.position;
@@ -108,6 +109,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
     }
+
     public void CardSound()
     {
         SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();

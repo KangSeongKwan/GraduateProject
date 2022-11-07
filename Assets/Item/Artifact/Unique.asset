@@ -16,6 +16,6 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: ae8d63c2fda570b4ab01ff3443883337, type: 3}
   item: {fileID: 0}
   abc: '*5'
-  rank: Unique
+  rank: Even
   condition: Even
   tag: artifact

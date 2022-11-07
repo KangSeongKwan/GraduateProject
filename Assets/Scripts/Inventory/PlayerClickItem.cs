@@ -11,6 +11,7 @@ public class PlayerClickItem : MonoBehaviour
     public List<string> item_array;
     public string clickItemName;
     public string clickItemTag;
+    public int artifactFlag;
     public Item sitem;
     SoundManager SoundEffect;
 
@@ -28,7 +29,7 @@ public class PlayerClickItem : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log(GameObject.Find("player").GetComponent<calculator>().cal(1, item_array)); // 계산
+            Debug.Log(GameObject.Find("player").GetComponent<calculator>().cal(0, item_array)); // 계산
         }
     }
     void HitCheckObject(RaycastHit2D hit)
@@ -49,12 +50,18 @@ public class PlayerClickItem : MonoBehaviour
                 sitem = item;
                 inventory.AddSslot(item);
                 Debug.Log(inventory.sslot.item.condition);
+                artifactFlag++;
             }
             else
             {
-                if(clickItemTag == "store" || clickItemTag == "reward")
+                if(clickItemTag == "store")
                 {
                     GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
+                    inventory.AddItem(item);
+                    item_array.Add(item.abc);
+                }
+                else if(clickItemTag == "reward")
+                {
                     inventory.AddItem(item);
                     item_array.Add(item.abc);
                 }

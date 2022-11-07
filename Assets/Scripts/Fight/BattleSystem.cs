@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -115,10 +116,11 @@ public class BattleSystem : MonoBehaviour
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
 			GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
-		} 
+		}
 		else if (state == BattleState.LOST)
 		{
 			dialogueText.text = "You were defeated.";
+			Invoke("GameOverScene", 2f);
 		}
 	}
 
@@ -169,4 +171,9 @@ public class BattleSystem : MonoBehaviour
     {
         EnemyHP = enemyUnit.currentHP;
     }
+
+	public void GameOverScene()
+	{
+		SceneManager.LoadScene("GameOver");
+	}
 }

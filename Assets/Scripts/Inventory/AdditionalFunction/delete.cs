@@ -9,6 +9,8 @@ public class delete : MonoBehaviour
     public Button No_Button_delete;
     public Button OK_Button_delete;
     public int Changedel = 0;
+    SoundManager SoundEffect;
+
     private void Start()
     {
         OK_Button_delete.gameObject.SetActive(false);
@@ -52,5 +54,10 @@ public class delete : MonoBehaviour
         OK_Button_delete.gameObject.SetActive(false);
         No_Button_delete.gameObject.SetActive(false);
         Changedel = 0;
+    }
+    public void DeleteSound()
+    {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        SoundEffect.SFXPlay("audioIDiscard");
     }
 }

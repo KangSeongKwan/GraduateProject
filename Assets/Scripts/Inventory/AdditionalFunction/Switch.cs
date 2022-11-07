@@ -11,6 +11,7 @@ public class Switch : MonoBehaviour
     public int ChangeCnt = 0;
     public Button No_Button;
     public Button OK_Button_swap;
+    SoundManager SoundEffect;
 
     private void Start()
     {
@@ -77,5 +78,9 @@ public class Switch : MonoBehaviour
         Cnum1 = -1;
         Cnum2 = -1;
     }
-
+    public void SwapSound()
+    {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        SoundEffect.SFXPlay("audioIChange");
+    }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  itemName: Even2
+  itemName: Odd
   itemImage: {fileID: 21300000, guid: ee31fe35fac942c4a91d6460ec0c5ed7, type: 3}
   item: {fileID: 0}
   abc: +4
-  rank: Normal
+  rank: Odd
   condition: Odd
   tag: artifact
