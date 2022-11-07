@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: The Rock
   unitLevel: 2
-  damage: 500
+  damage: 10
   maxHP: 30
   currentHP: 30
   storeItemName: 
