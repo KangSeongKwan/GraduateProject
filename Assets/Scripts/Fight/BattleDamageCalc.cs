@@ -79,7 +79,7 @@ public class BattleDamageCalc : MonoBehaviour
     {
         itemName = GameObject.Find("Battle System").GetComponent<BattleClickItem>().NameOfCard;
         CalculatedDamage = GameObject.Find("player").GetComponent<calculator>().cal(1, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
-        if (GameObject.Find("player").GetComponent<PlayerClickItem>().aaa == 1)
+        if (GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemTag == "artifact")
         {
             switch (GameObject.Find("player").GetComponent<PlayerClickItem>().sitem.condition)
             {

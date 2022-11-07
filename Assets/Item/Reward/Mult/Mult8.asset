@@ -18,3 +18,4 @@ MonoBehaviour:
   abc: '*8'
   rank: 
   condition: 
+  tag: reward

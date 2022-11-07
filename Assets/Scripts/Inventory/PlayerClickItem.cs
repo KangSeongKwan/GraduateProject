@@ -10,7 +10,7 @@ public class PlayerClickItem : MonoBehaviour
     public Inventory inventory;
     public List<string> item_array;
     public string clickItemName;
-    public int aaa;
+    public string clickItemTag;
     public Item sitem;
     SoundManager SoundEffect;
 
@@ -42,22 +42,26 @@ public class PlayerClickItem : MonoBehaviour
             print($"{item.itemName}");
             SoundEffect.SFXPlay("audioCardSelect");
             clickItemName = item.itemName;
+            clickItemTag = item.tag;
 
-            if (aaa == 0)
+            if (clickItemTag == "artifact")
             {
                 sitem = item;
                 inventory.AddSslot(item);
                 Debug.Log(inventory.sslot.item.condition);
-                aaa++;
             }
             else
             {
-                if(item.tag == "store")
+                if(clickItemTag == "store" || clickItemTag == "reward")
                 {
                     GameObject.Find("PlayerStat").GetComponent<Unit>().UseStore();
+                    inventory.AddItem(item);
+                    item_array.Add(item.abc);
                 }
-                inventory.AddItem(item);
-                item_array.Add(item.abc);
+                else if(clickItemTag == "hpincrease")
+                {
+                    GameObject.Find("PlayerStat").GetComponent<Unit>().MaxHPIncrease();
+                }
             }
             //오브젝트 삭제는 여기서 해야함
             GameObject.Find("player").GetComponent<ItemSelect>().DeleteItemList();

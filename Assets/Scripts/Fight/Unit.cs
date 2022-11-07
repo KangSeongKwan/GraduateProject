@@ -103,4 +103,9 @@ public class Unit : MonoBehaviour
 			currentHP = maxHP;
         }
 	}
+
+	public void MaxHPIncrease()
+    {
+		maxHP += 10;
+    }
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
-  m_Name: Mult3Store
+  m_Name: Epic
   m_EditorClassIdentifier: 
-  itemName: Mult3Store
-  itemImage: {fileID: 21300000, guid: bd2bb161f57e85e46b97f65c2c78a4e6, type: 3}
+  itemName: Odd
+  itemImage: {fileID: 21300000, guid: a4bdb0404f71c174084dc367ae44623d, type: 3}
   item: {fileID: 0}
-  abc: '*3'
-  rank: 
-  condition: 
-  tag: store
+  abc: +8
+  rank: Epic
+  condition: Even
+  tag: artifact

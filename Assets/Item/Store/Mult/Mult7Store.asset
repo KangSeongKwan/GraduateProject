@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
   m_Name: Mult7Store
   m_EditorClassIdentifier: 
-  itemName: Mult7
+  itemName: Mult7Store
   itemImage: {fileID: 21300000, guid: 720785910ed4ff84b93bb56792b4df9f, type: 3}
   item: {fileID: 0}
   abc: '*7'

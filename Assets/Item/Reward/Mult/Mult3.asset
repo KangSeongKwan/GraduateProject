@@ -18,3 +18,4 @@ MonoBehaviour:
   abc: '*3'
   rank: 
   condition: 
+  tag: reward

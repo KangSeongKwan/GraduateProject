@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
-  m_Name: Odd
+  m_Name: Unique
   m_EditorClassIdentifier: 
-  itemName: Odd
-  itemImage: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  itemName: Even
+  itemImage: {fileID: 21300000, guid: ae8d63c2fda570b4ab01ff3443883337, type: 3}
   item: {fileID: 0}
-  abc: +5
-  rank: Rare
-  condition: Odd
-  tag: 
+  abc: '*5'
+  rank: Unique
+  condition: Even
+  tag: artifact
