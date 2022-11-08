@@ -7,6 +7,9 @@ public class RandomCard : MonoBehaviour
     public WeightedRandomList<GameObject> rewardList;
     public WeightedRandomList<GameObject> storeList;
     public WeightedRandomList<GameObject> artifactList;
+    public WeightedRandomList<GameObject> battleAttackList;
+    public WeightedRandomList<GameObject> battleHealList;
+
     public GameObject[] storeItems;
     public GameObject[] rewardItems;
     public GameObject[] artifactItems;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mult6
   m_EditorClassIdentifier: 
   itemName: Mult6
-  itemImage: {fileID: 21300000, guid: b57df0cf4fecdf847a27eebd8210fe96, type: 3}
+  itemImage: {fileID: 21300000, guid: e44b59390e5d1b440a369e27f63fc904, type: 3}
   item: {fileID: 0}
   abc: '*6'
   rank: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mult1Store
   m_EditorClassIdentifier: 
   itemName: Mult1Store
-  itemImage: {fileID: 21300000, guid: af2b3a71964214546985f3ba24836a02, type: 3}
+  itemImage: {fileID: 21300000, guid: 0d1602f5217cb2b4dbcb81dcc7c2e440, type: 3}
   item: {fileID: 0}
   abc: '*1'
   rank: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plus1
   m_EditorClassIdentifier: 
   itemName: Plus1
-  itemImage: {fileID: 21300000, guid: 23758521a4f360541bc77dc1be463345, type: 3}
+  itemImage: {fileID: 21300000, guid: 00bbdc46f715e4443b3a71fb96edb482, type: 3}
   item: {fileID: 0}
   abc: +1
   rank: 
