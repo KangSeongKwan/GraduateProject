@@ -10,7 +10,8 @@ public class BattleSystem : MonoBehaviour
 {
 
 	public GameObject playerPrefab;
-	public GameObject enemyPrefab;
+	//public GameObject enemyPrefab;
+	public List<GameObject> EnemyList = new List<GameObject>();
 	public static List<GameObject> AttkCard = new List<GameObject>();
 	public static List<GameObject> HealCard = new List<GameObject>();
 	public Transform playerBattleStation;
@@ -25,7 +26,8 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
     public int EnemyHP = 0;
-    
+	public int i;
+	BattleCamActiver battleCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class BattleSystem : MonoBehaviour
 		GameObject.Find("Light2D").SetActive(false);
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = GameObject.Find("PlayerStat").GetComponent<Unit>();
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		GameObject enemyGO = Instantiate(EnemyList[i], enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
 
 		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
