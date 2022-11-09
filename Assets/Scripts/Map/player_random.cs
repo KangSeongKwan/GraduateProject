@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class player_random : MonoBehaviour
 {
     public static int move_point = 0;
-    public int max_count = 6;
+    public bool roll = false;
     public Text count_text;
     SoundManager SoundEffect;
     int Randomobj;
@@ -17,31 +17,33 @@ public class player_random : MonoBehaviour
     }
     void click_space()
     {
-        if (move_point == 0)
+        if (roll)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (move_point == 0)
             {
-                move_point = Random.Range(1, max_count);
-                max_count++;
-                GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
-                Randomobj = Random.Range(1, 4);
-
-                switch (Randomobj)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    case 1:
-                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-                        SoundEffect.SFXPlay("audioDice1");
-                        break;
+                    move_point = Random.Range(1, 7);
+                    GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
+                    Randomobj = Random.Range(1, 4);
 
-                    case 2:
-                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-                        SoundEffect.SFXPlay("audioDice2");
-                        break;
+                    switch (Randomobj)
+                    {
+                        case 1:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice1");
+                            break;
 
-                    case 3:
-                        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-                        SoundEffect.SFXPlay("audioDice3");
-                        break;
+                        case 2:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice2");
+                            break;
+
+                        case 3:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice3");
+                            break;
+                    }
                 }
             }
         }

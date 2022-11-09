@@ -9,10 +9,12 @@ public class InventoryActive : MonoBehaviour
     SoundManager SoundEffect;
     Click_Move ClickMove;
     bool enemy;
+    bool roll;
     // Start is called before the first frame update
     public void Start()
     {
         enemy = GameObject.Find("player").GetComponent<EnemyContact>().enemy;
+        roll = GameObject.Find("player").GetComponent<player_random>().roll;
     }
     // Update is called once per frame
     private void Update()
@@ -45,9 +47,14 @@ public class InventoryActive : MonoBehaviour
                 if (activeInventory == false)
                 {
                     ClickMove.click = true;
+                    GameObject.Find("player").GetComponent<player_random>().roll = true;
+
                 }
                 else
+                {
                     ClickMove.click = false;
+                    GameObject.Find("player").GetComponent<player_random>().roll = false;
+                }
             }
         }
     }

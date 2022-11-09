@@ -8,13 +8,13 @@ public class EnemyContact : MonoBehaviour
     public bool delete_on = false;
     public bool swap_on = false;
     public bool enemy = false;
-  
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "event")
         {
             enemy = true;
+            GameObject.Find("player").GetComponent<player_random>().roll = false;
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Delete")
@@ -26,6 +26,7 @@ public class EnemyContact : MonoBehaviour
                 GameObject.Find("CanvasInventory").GetComponent<InventoryActive>().activeInventory = true;
                 delete_on = true;
                 GameObject.Find("player").GetComponent<Click_Move>().click = false;
+                GameObject.Find("player").GetComponent<player_random>().roll = false;
             }
             else
                 Debug.Log("아무것도 없습니다.");
@@ -39,6 +40,7 @@ public class EnemyContact : MonoBehaviour
                 GameObject.Find("CanvasInventory").GetComponent<InventoryActive>().activeInventory = true;
                 swap_on = true;
                 GameObject.Find("player").GetComponent<Click_Move>().click = false;
+                GameObject.Find("player").GetComponent<player_random>().roll = false;
             }
             else
                 Debug.Log("인벤토리에 2개이상의 아이템이 필요합니다.");

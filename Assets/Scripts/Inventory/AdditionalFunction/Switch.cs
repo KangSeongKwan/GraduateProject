@@ -68,6 +68,7 @@ public class Switch : MonoBehaviour
         No_Button.gameObject.SetActive(false);
         GameObject.Find("player").GetComponent<EnemyContact>().swap_on = false;
         GameObject.Find("player").GetComponent<Click_Move>().click = true;
+        GameObject.Find("player").GetComponent<player_random>().roll = true;
         GameObject.Find("CanvasInventory").GetComponent<InventoryActive>().activeInventory = false;
     }
     public void Button_off()

@@ -20,6 +20,7 @@ public class ObjectItem : MonoBehaviour, IObjectItem
     public Item ClickItem()
     {
         GameObject.Find("player").GetComponent<Click_Move>().click = true;
+        GameObject.Find("player").GetComponent<player_random>().roll = true;
         GameObject.Find("player").GetComponent<EnemyContact>().enemy = false;
         return this.item;
     }

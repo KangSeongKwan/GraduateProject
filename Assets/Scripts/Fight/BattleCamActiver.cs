@@ -19,8 +19,9 @@ public class BattleCamActiver : MonoBehaviour
             GameObject.Find("BattleSYSTEM").transform.Find("Battle System").gameObject.SetActive(true);
             GameObject.Find("Battle System").GetComponent<BattleSystem>().i = Ename;
             GameObject.Find("Battle System").GetComponent<BattleSystem>().StartBattle();
-            
             Debug.Log("전투시작");
+            GameObject.Find("player").GetComponent<Click_Move>().click = false;
+            GameObject.Find("player").GetComponent<player_random>().roll = false;
         }
     }
 }

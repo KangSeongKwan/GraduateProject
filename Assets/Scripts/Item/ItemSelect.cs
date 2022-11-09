@@ -42,7 +42,7 @@ public class ItemSelect : MonoBehaviour
         {
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
             Destroy(other.gameObject);
-            CreateReward();
+            Invoke("CreateReward", 0.175f);   //Ãæµ¹ ½Ã
         }
 
         if (other.gameObject.tag == "store")
@@ -50,8 +50,10 @@ public class ItemSelect : MonoBehaviour
             SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
             SoundEffect.SFXPlay("audioShop");
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
+            GameObject.Find("player").GetComponent<player_random>().roll = false;
             Destroy(other.gameObject);
-            CreateStore();
+            Invoke("CreateStore", 0.175f);
+            //CreateStore();
         }
     }
     public void DeleteItemList()
@@ -92,8 +94,9 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
-
+        GameObject.Find("player").GetComponent<Click_Move>().click = false;
         InvokeRepeating("CardSound", 0.5f, 0.2f);
+
         count = 0;
     }
 
