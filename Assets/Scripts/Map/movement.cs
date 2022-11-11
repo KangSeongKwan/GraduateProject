@@ -14,6 +14,8 @@ public class movement : MonoBehaviour
     public Vector3 pos;
     public float posX;
     public GameObject spot;
+    SoundManager SoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class movement : MonoBehaviour
                         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, Stopmovement))
                         {
                             movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                            KeyCodeMoveSound();
                             player_random.move_point--;
                             GameObject.Find("player").GetComponent<Click_Move>().Buttonoff();
                         }
@@ -45,6 +48,7 @@ public class movement : MonoBehaviour
                         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, Stopmovement))
                         {
                             movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                            KeyCodeMoveSound();
                             player_random.move_point--;
                             GameObject.Find("player").GetComponent<Click_Move>().Buttonoff();
                         }
@@ -60,6 +64,12 @@ public class movement : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+
+    public void KeyCodeMoveSound()
+    {
+        SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        SoundEffect.SFXPlay("audioMove");
     }
 }
 

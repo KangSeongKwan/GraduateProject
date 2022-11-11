@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be909f6c916772f48bcd02ad36f9b8fd, type: 3}
   m_Name: Divide5
   m_EditorClassIdentifier: 
-  itemName: Divide5
-  itemImage: {fileID: 21300000, guid: 105906a7a67737e4b94a7e9245fcbad1, type: 3}
+  itemName: Plus5
+  itemImage: {fileID: 21300000, guid: 4fdea76c88dcd7143a5127ed822e9fa5, type: 3}
   item: {fileID: 0}
   abc: /5
   rank: 

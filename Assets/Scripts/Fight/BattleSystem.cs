@@ -10,7 +10,8 @@ public class BattleSystem : MonoBehaviour
 {
 
 	public GameObject playerPrefab;
-	public GameObject enemyPrefab;
+	//public GameObject enemyPrefab;
+	public List<GameObject> EnemyList = new List<GameObject>();
 	public static List<GameObject> AttkCard = new List<GameObject>();
 	public static List<GameObject> HealCard = new List<GameObject>();
 	public Transform playerBattleStation;
@@ -25,8 +26,8 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
     public int EnemyHP = 0;
-	public GameObject Light2D;
-    
+	public int i;
+	BattleCamActiver battleCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +36,10 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator SetupBattle()
 	{
-		Light2D.SetActive(false);
+		GameObject.Find("Light2D").SetActive(false);
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = GameObject.Find("PlayerStat").GetComponent<Unit>();
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		GameObject enemyGO = Instantiate(EnemyList[i], enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
 
 		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
@@ -117,7 +118,7 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
-			Light2D.SetActive(true);
+			GameObject.Find("LIGHT2D").transform.Find("Light2D").gameObject.SetActive(true);
 			GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
 		}
 		else if (state == BattleState.LOST)

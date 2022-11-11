@@ -46,6 +46,7 @@ public class delete : MonoBehaviour
         OK_Button_delete.gameObject.SetActive(false);
         No_Button_delete.gameObject.SetActive(false);
         GameObject.Find("player").GetComponent<Click_Move>().click = true;
+        GameObject.Find("player").GetComponent<player_random>().roll = true; ;
         GameObject.Find("CanvasInventory").GetComponent<InventoryActive>().activeInventory = false;
         Changedel = 0;
     }

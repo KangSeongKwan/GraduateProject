@@ -4,72 +4,38 @@ using UnityEngine;
 
 public class BattleSelectItem : MonoBehaviour
 {
-    public static List<GameObject> AttkCard = new List<GameObject>();
-    public static List<GameObject> HealCard = new List<GameObject>();
-    public GameObject BaseBorad;
-    public GameObject[] Attkprefabs;
-    public GameObject[] Healprefabs;
+    public WeightedRandomList<GameObject> battleAttackList;
+    public WeightedRandomList<GameObject> battleHealList;
+    public GameObject battleAttackItem;
+    public GameObject battleHealItem;
     public GameObject[] CardInstantiates;
-    int SpawnObjCard;
-
-    public void SelectAttackCard()
-    {
-        SpawnObjCard = Random.Range(1, 4);
-        switch (SpawnObjCard)
-        {
-            case 1:
-                AttkCard.Add(Attkprefabs[0]);
-                break;
-            case 2:
-                AttkCard.Add(Attkprefabs[1]);
-                break;
-            case 3:
-                AttkCard.Add(Attkprefabs[2]);
-                break;
-            default:
-                Debug.Log("Error");
-                break;
-        }
-    }
-
-    public void SelectHealCard()
-    {
-        SpawnObjCard = Random.Range(1, 4);
-        switch (SpawnObjCard)
-        {
-            case 1:
-                HealCard.Add(Healprefabs[0]);
-                break;
-            case 2:
-                HealCard.Add(Healprefabs[1]);
-                break;
-            case 3:
-                HealCard.Add(Healprefabs[2]);
-                break;
-            default:
-                Debug.Log("Error");
-                break;
-        }
-    }
 
     public void SetCard()
     {
-        SelectAttackCard();
-        SelectHealCard();
-        CardInstantiates[0] = Instantiate(AttkCard[0], new Vector3(-504, 299, 0), Quaternion.identity);
-        CardInstantiates[1] = Instantiate(HealCard[0], new Vector3(-496, 299, 0), Quaternion.identity);
-        CardInstantiates[2] = Instantiate(BaseBorad, new Vector3(-500,300,0), Quaternion.identity);
+        ShowBattleAttackItem();
+        ShowBattleHealItem();
+        CardInstantiates[0] = Instantiate(battleAttackItem, new Vector3(-510, 300, 0), Quaternion.identity);
+        CardInstantiates[1] = Instantiate(battleHealItem, new Vector3(-490, 300, 0), Quaternion.identity);
     }
 
     public void DeleteBattleItemList()
     {
         int i = 0;
-        for (; i < 3; i++)
+        for (; i < 2; i++)
         {
-            //Fieldï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ Objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½
+            //Field¿¡ ¿ÀºêÁ§Æ®¸¦ ¹èÄ¡ÇÏ´Â ÀÛ¾÷À» ¿Ï·áÇÑ Object¸¦ »èÁ¦ÇØ¾ß ¿¡·¯°¡ ¾È³²
             Destroy(CardInstantiates[i]);
         }
-        AttkCard.Clear();
-        HealCard.Clear();
+    }
+    public void ShowBattleAttackItem()
+    {
+        battleAttackItem = battleAttackList.GetRandom();
+        Debug.Log("Battle Weight Insert Succeed");
+    }
+
+    public void ShowBattleHealItem()
+    {
+        battleHealItem = battleHealList.GetRandom();
+        Debug.Log("Battel Weight Insert Succeed");
     }
 }

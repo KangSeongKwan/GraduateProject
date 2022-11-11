@@ -81,7 +81,23 @@ public class BattleDamageCalc : MonoBehaviour
         CalculatedDamage = GameObject.Find("player").GetComponent<calculator>().cal(0, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
         if (GameObject.Find("player").GetComponent<PlayerClickItem>().artifactFlag == 1)
         {
-            CalculatedDamage = GameObject.Find("player").GetComponent<calculator>().Cal1(CalculatedDamage, GameObject.Find("player").GetComponent<PlayerClickItem>().sitem.abc);
+            switch (GameObject.Find("player").GetComponent<PlayerClickItem>().sitem.condition)
+            {
+                case "Even":
+                    if (CalculatedDamage % 2 == 0)
+                    {
+                        CalculatedDamage = GameObject.Find("player").GetComponent<calculator>().Cal1(CalculatedDamage, GameObject.Find("player").GetComponent<PlayerClickItem>().sitem.abc);
+                    }
+                    break;
+                case "Odd":
+                    if (CalculatedDamage % 2 == 1)
+                    {
+                        CalculatedDamage = GameObject.Find("player").GetComponent<calculator>().Cal1(CalculatedDamage, GameObject.Find("player").GetComponent<PlayerClickItem>().sitem.abc);
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
         ValueOfCard = itemName.Split(' ');
         splitedCardStat = ValueOfCard[2].Remove(1, 7);

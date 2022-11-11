@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minus8
   m_EditorClassIdentifier: 
   itemName: Minus8
-  itemImage: {fileID: 21300000, guid: af2b3a71964214546985f3ba24836a02, type: 3}
+  itemImage: {fileID: 21300000, guid: 8534bf3a17bf44a4f8901e97f776565d, type: 3}
   item: {fileID: 0}
   abc: -8
   rank: 

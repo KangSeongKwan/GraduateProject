@@ -7,6 +7,7 @@ public class RandomCard : MonoBehaviour
     public WeightedRandomList<GameObject> rewardList;
     public WeightedRandomList<GameObject> storeList;
     public WeightedRandomList<GameObject> artifactList;
+
     public GameObject[] storeItems;
     public GameObject[] rewardItems;
     public GameObject[] artifactItems;
@@ -19,6 +20,7 @@ public class RandomCard : MonoBehaviour
         }
         Debug.Log("Weight Insert Succeed");
     }
+
     public void ShowStoreItem()
     {
         for (int i = 0; i < 3; i++)

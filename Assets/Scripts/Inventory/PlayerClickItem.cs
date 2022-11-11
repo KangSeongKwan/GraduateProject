@@ -40,7 +40,7 @@ public class PlayerClickItem : MonoBehaviour
         if (clickInterface != null)
         {
             Item item = clickInterface.ClickItem();
-            print($"{item.itemName}");
+            //print($"{item.itemName}");
             SoundEffect.SFXPlay("audioCardSelect");
             clickItemName = item.itemName;
             clickItemTag = item.tag;

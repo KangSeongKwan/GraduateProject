@@ -1,5 +1,0 @@
-delete
-objectitem
-inventoryactive
-enemycontact
-player_random

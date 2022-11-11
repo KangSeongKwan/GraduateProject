@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Divide6
   m_EditorClassIdentifier: 
   itemName: Divide6
-  itemImage: {fileID: 21300000, guid: a187ab238806c6e43b05cbc3da9744e0, type: 3}
+  itemImage: {fileID: 21300000, guid: b02d1a803fa94f34cb2236aae7b7ae97, type: 3}
   item: {fileID: 0}
   abc: /6
   rank: 
