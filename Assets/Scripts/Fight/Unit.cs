@@ -53,19 +53,21 @@ public class Unit : MonoBehaviour
 			switch (a)
 			{
 				case 9:
-					currentHP -= 30;
+					currentHP -= (maxHP / 10) * 5;
 					break;
 				case 8:
 				case 7:
 				case 6:
 				case 5:
-					currentHP -= 25;
+					currentHP -= (maxHP / 10) * 4;
 					break;
 				case 4:
 				case 3:
 				case 2:
+					currentHP -= (maxHP / 10) * 3;
+					break;
 				case 1:
-					currentHP -= 20;
+					currentHP -= 10;
 					break;
 			}
 		}
