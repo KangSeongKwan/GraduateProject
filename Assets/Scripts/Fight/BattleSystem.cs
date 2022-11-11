@@ -25,6 +25,7 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
     public int EnemyHP = 0;
+	public GameObject Light2D;
     
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator SetupBattle()
 	{
-		GameObject.Find("Light2D").SetActive(false);
+		Light2D.SetActive(false);
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = GameObject.Find("PlayerStat").GetComponent<Unit>();
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
@@ -116,7 +117,7 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
-			GameObject.Find("Light2D").SetActive(true);
+			Light2D.SetActive(true);
 			GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
 		}
 		else if (state == BattleState.LOST)

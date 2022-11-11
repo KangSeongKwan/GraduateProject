@@ -17,6 +17,9 @@ public class ItemSelect : MonoBehaviour
     Vector3 Ppos2;
     int SpawnObj;
     SoundManager SoundEffect;
+    public GameObject rewardBorad;
+    public GameObject shopBorad;
+    public GameObject Borad;
 
     private int count = 0;
 
@@ -61,6 +64,7 @@ public class ItemSelect : MonoBehaviour
         {
             Destroy(Instantiates[i]);
         }
+        Destroy(Borad);
         items.Clear();
         
     }
@@ -76,6 +80,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(rewardBorad, Ppos1, Quaternion.identity);
 
         InvokeRepeating("CardSound", 0.5f, 0.2f);
         count = 0;
@@ -92,6 +97,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(rewardBorad, Ppos1, Quaternion.identity);
 
         InvokeRepeating("CardSound", 0.5f, 0.2f);
         count = 0;
@@ -108,6 +114,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(shopBorad, Ppos1, Quaternion.identity);
     }
 
     public void CardSound()

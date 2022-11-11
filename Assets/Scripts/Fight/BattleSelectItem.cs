@@ -6,6 +6,7 @@ public class BattleSelectItem : MonoBehaviour
 {
     public static List<GameObject> AttkCard = new List<GameObject>();
     public static List<GameObject> HealCard = new List<GameObject>();
+    public GameObject BaseBorad;
     public GameObject[] Attkprefabs;
     public GameObject[] Healprefabs;
     public GameObject[] CardInstantiates;
@@ -55,16 +56,17 @@ public class BattleSelectItem : MonoBehaviour
     {
         SelectAttackCard();
         SelectHealCard();
-        CardInstantiates[0] = Instantiate(AttkCard[0], new Vector3(-510, 300, 0), Quaternion.identity);
-        CardInstantiates[1] = Instantiate(HealCard[0], new Vector3(-490, 300, 0), Quaternion.identity);
+        CardInstantiates[0] = Instantiate(AttkCard[0], new Vector3(-504, 299, 0), Quaternion.identity);
+        CardInstantiates[1] = Instantiate(HealCard[0], new Vector3(-496, 299, 0), Quaternion.identity);
+        CardInstantiates[2] = Instantiate(BaseBorad, new Vector3(-500,300,0), Quaternion.identity);
     }
 
     public void DeleteBattleItemList()
     {
         int i = 0;
-        for (; i < 2; i++)
+        for (; i < 3; i++)
         {
-            //Field¿¡ ¿ÀºêÁ§Æ®¸¦ ¹èÄ¡ÇÏ´Â ÀÛ¾÷À» ¿Ï·áÇÑ Object¸¦ »èÁ¦ÇØ¾ß ¿¡·¯°¡ ¾È³²
+            //Fieldï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ Objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½
             Destroy(CardInstantiates[i]);
         }
         AttkCard.Clear();
