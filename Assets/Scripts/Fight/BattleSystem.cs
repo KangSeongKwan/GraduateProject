@@ -113,13 +113,19 @@ public class BattleSystem : MonoBehaviour
 
 	void EndBattle()
 	{
-		if(state == BattleState.WON)
+		BattleCount Bcount = GameObject.Find("BattleCount").GetComponent<BattleCount>();
+		if (state == BattleState.WON)
 		{
+			Bcount.battleCount++;
+			if(Bcount.battleCount >= 3)
+            {
+				GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
+				Bcount.battleCount = 0;
+			}
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
 			GameObject.Find("LIGHT2D").transform.Find("Light2D").gameObject.SetActive(true);
-			GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
 		}
 		else if (state == BattleState.LOST)
 		{

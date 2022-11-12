@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475d8d7ed9646504888a5702b5d7ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: White Pawn
+  unitName: Dark Pawn2
   unitLevel: 2
-  damage: 5
-  maxHP: 25
-  currentHP: 25
+  damage: 2
+  maxHP: 50
+  currentHP: 50
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &988103195874300802

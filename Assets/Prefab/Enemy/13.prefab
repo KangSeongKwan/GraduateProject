@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475d8d7ed9646504888a5702b5d7ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: The Rock 1
-  unitLevel: 2
-  damage: 10
-  maxHP: 85
-  currentHP: 85
+  unitName: White Pawn6
+  unitLevel: 14
+  damage: 14
+  maxHP: 220
+  currentHP: 220
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

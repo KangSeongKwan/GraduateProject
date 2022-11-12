@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475d8d7ed9646504888a5702b5d7ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: The Rock 1
-  unitLevel: 2
-  damage: 10
-  maxHP: 140
-  currentHP: 140
+  unitName: Black Bishop2
+  unitLevel: 25
+  damage: 25
+  maxHP: 390
+  currentHP: 390
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
