@@ -52,6 +52,7 @@ public class BattleDamageCalc : MonoBehaviour
     public int FinalHealWithCard()
     {
         BattleCardHealsplit();
+        BattleCardDamagesplit();
 
         switch (ValueOfCard[0])
         {
@@ -62,11 +63,11 @@ public class BattleDamageCalc : MonoBehaviour
                 switch (ValueOfCard[1])
                 {
                     case "+":
-                        FinalHeal += AddHeal;
+                        FinalHeal = (CalculatedDamage / 10) + AddHeal;
                         Debug.Log(FinalHeal);
                         break;
                     case "x":
-                        FinalHeal *= AddHeal;
+                        FinalHeal = (CalculatedDamage / 10) * AddHeal;
                         Debug.Log(FinalHeal);
                         break;
                 }

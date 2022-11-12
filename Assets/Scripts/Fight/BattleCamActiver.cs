@@ -8,7 +8,6 @@ public class BattleCamActiver : MonoBehaviour
     public int Ename;
     public void OnTriggerEnter2D(Collider2D other)
     {
-        
         if (other.gameObject.tag == "Player")
         {
             EStringname = gameObject.name;

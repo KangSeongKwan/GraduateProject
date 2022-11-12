@@ -53,7 +53,6 @@ public class ItemSelect : MonoBehaviour
             GameObject.Find("player").GetComponent<player_random>().roll = false;
             Destroy(other.gameObject);
             Invoke("CreateStore", 0.175f);
-            //CreateStore();
         }
     }
     public void DeleteItemList()
@@ -64,7 +63,6 @@ public class ItemSelect : MonoBehaviour
             Destroy(Instantiates[i]);
         }
         items.Clear();
-        
     }
 
     public void CreateReward()
