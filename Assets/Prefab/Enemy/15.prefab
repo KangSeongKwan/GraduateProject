@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Rook1
   unitLevel: 16
-  damage: 16
+  damage: 7
   maxHP: 240
   currentHP: 240
   storeItemName: 

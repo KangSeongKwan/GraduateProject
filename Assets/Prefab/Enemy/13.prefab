@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Pawn6
   unitLevel: 14
-  damage: 14
+  damage: 5
   maxHP: 220
   currentHP: 220
   storeItemName: 

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Knight2
   unitLevel: 21
-  damage: 21
+  damage: 13
   maxHP: 320
   currentHP: 320
   storeItemName: 

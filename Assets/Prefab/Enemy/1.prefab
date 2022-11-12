@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Dark Pawn2
   unitLevel: 2
-  damage: 2
+  damage: 3
   maxHP: 50
   currentHP: 50
   storeItemName: 

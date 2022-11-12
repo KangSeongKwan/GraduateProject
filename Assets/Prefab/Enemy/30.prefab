@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White King
   unitLevel: 31
-  damage: 31
+  damage: 40
   maxHP: 700
   currentHP: 700
   storeItemName: 
