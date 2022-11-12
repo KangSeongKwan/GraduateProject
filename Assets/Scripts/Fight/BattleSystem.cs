@@ -120,6 +120,7 @@ public class BattleSystem : MonoBehaviour
 			if (Bcount.battleCount >= 3)
 			{
 				GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
+				Bcount.battleCount = 0;
 			}
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
