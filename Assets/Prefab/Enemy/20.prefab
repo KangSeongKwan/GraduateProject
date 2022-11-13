@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Knight2
   unitLevel: 21
-  damage: 16
+  damage: 32
   maxHP: 600
   currentHP: 600
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

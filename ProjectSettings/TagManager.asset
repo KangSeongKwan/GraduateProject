@@ -13,6 +13,7 @@ TagManager:
   - store
   - heal
   - Heal
+  - hpIncrease
   layers:
   - Default
   - TransparentFX

@@ -3128,7 +3128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1225299882928706871, guid: 8c8536edbe8c37741b2ba8d53b7acbc0, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1225299882928706871, guid: 8c8536edbe8c37741b2ba8d53b7acbc0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25415,6 +25415,7 @@ MonoBehaviour:
   CalculatedHeal: 0
   itemName: 
   ValueOfCard: []
+  playerMaxHP: 0
 --- !u!114 &719032257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28768,8 +28769,16 @@ MonoBehaviour:
       weight: 1
     - item: {fileID: 4003629563045907644, guid: b49773ead8caaa444bf541713c1e44dd, type: 3}
       weight: 1
-    - item: {fileID: 4003629563045907644, guid: 8a4c49afee3996a418652e22e4484663, type: 3}
+    - item: {fileID: 621411349092622389, guid: a5543c5f92f902444af6841d0a14aca5, type: 3}
+      weight: 25
+    - item: {fileID: 621411349092622389, guid: a15a2fcc1d29c7e419362a1d7602e3db, type: 3}
       weight: 20
+    - item: {fileID: 3569257495567815168, guid: 6e3fd47892ad7dd4590e5ce37228bf44, type: 3}
+      weight: 15
+    - item: {fileID: 3569257495567815168, guid: acc80771a3fa82f4eac17e351061ab0e, type: 3}
+      weight: 10
+    - item: {fileID: 4003629563045907644, guid: 8a4c49afee3996a418652e22e4484663, type: 3}
+      weight: 5
   rewardDebuffList:
     list:
     - item: {fileID: 1590784891453205156, guid: 8e9aaad5afd41b74793a4c1b9f06319b, type: 3}
@@ -29345,7 +29354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2533928327580381523, guid: 83925d88cbe043f48af99917adcc6ef1, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2533928327580381523, guid: 83925d88cbe043f48af99917adcc6ef1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32695,7 +32704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1225299882928706871, guid: 8c8536edbe8c37741b2ba8d53b7acbc0, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1225299882928706871, guid: 8c8536edbe8c37741b2ba8d53b7acbc0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45294,6 +45303,7 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!4 &1969774448
 Transform:

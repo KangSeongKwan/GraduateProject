@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Dark Pawn4
   unitLevel: 4
-  damage: 3
+  damage: 6
   maxHP: 110
   currentHP: 110
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

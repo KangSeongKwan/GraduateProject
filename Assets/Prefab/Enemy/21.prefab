@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Knight1
   unitLevel: 21
-  damage: 18
+  damage: 35
   maxHP: 650
   currentHP: 650
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

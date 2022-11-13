@@ -14,6 +14,7 @@ public class BattleDamageCalc : MonoBehaviour
     public string itemName;
     public string[] ValueOfCard;
     string splitedCardStat;
+    public int playerMaxHP;
 
     public int FinalDamageWithCard()
     {
@@ -52,7 +53,7 @@ public class BattleDamageCalc : MonoBehaviour
     public int FinalHealWithCard()
     {
         BattleCardHealsplit();
-        BattleCardDamagesplit();
+        playerMaxHP = GameObject.Find("PlayerStat").GetComponent<Unit>().maxHP;
 
         switch (ValueOfCard[0])
         {
@@ -63,11 +64,11 @@ public class BattleDamageCalc : MonoBehaviour
                 switch (ValueOfCard[1])
                 {
                     case "+":
-                        FinalHeal = (CalculatedDamage / 10) + AddHeal;
+                        FinalHeal = (playerMaxHP / 20) + AddHeal;
                         Debug.Log(FinalHeal);
                         break;
                     case "x":
-                        FinalHeal = (CalculatedDamage / 10) * AddHeal;
+                        FinalHeal = (playerMaxHP / 20) * AddHeal;
                         Debug.Log(FinalHeal);
                         break;
                 }

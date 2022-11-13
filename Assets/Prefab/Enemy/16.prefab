@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Rook2
   unitLevel: 17
-  damage: 10
+  damage: 22
   maxHP: 400
   currentHP: 400
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

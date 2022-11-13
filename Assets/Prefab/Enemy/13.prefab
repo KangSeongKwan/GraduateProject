@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Pawn6
   unitLevel: 14
-  damage: 8
+  damage: 16
   maxHP: 300
   currentHP: 300
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

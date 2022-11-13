@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Rook1
   unitLevel: 18
-  damage: 12
+  damage: 25
   maxHP: 450
   currentHP: 450
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

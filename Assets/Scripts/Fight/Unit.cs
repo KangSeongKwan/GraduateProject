@@ -12,6 +12,7 @@ public class Unit : MonoBehaviour
 	public int currentHP;
 	SoundManager SoundEffect;
 	public string storeItemName;
+	public string maxHPItemName;
 
 	public int ADDHeal = 0;
 	
@@ -108,6 +109,29 @@ public class Unit : MonoBehaviour
 
 	public void MaxHPIncrease()
     {
-		maxHP += 10;
-    }
+		maxHPItemName = GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemName;
+		int a = int.Parse(maxHPItemName.Substring(10, 2));
+		switch(a)
+        {
+			case 10:
+				maxHP += 10;
+				break;
+
+			case 20:
+				maxHP += 20;
+				break;
+
+			case 30:
+				maxHP += 30;
+				break;
+
+			case 40:
+				maxHP += 40;
+				break;
+
+			case 50:
+				maxHP += 50;
+				break;
+		}
+	}
 }

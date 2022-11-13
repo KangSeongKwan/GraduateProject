@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Queen
   unitLevel: 29
-  damage: 30
+  damage: 60
   maxHP: 1200
   currentHP: 1200
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

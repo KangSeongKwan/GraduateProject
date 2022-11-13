@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Queen
   unitLevel: 28
-  damage: 27
+  damage: 50
   maxHP: 1000
   currentHP: 1000
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:

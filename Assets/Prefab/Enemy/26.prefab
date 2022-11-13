@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Bishop2
   unitLevel: 27
-  damage: 25
+  damage: 47
   maxHP: 900
   currentHP: 900
   storeItemName: 
+  maxHPItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
 BoxCollider2D:
