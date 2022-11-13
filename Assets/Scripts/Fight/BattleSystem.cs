@@ -88,7 +88,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator EnemyTurn()
 	{
-		dialogueText.text = enemyUnit.unitName + "attacks! (damage : " + enemyUnit.damage + ")";
+		dialogueText.text = enemyUnit.unitName + " attacks! (damage : " + enemyUnit.damage + ")";
 		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 		SoundEffect.SFXPlay("audioEAttack");
 		yield return new WaitForSeconds(1f);
