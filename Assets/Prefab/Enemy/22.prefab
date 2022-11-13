@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Knight2
   unitLevel: 23
-  damage: 15
-  maxHP: 350
-  currentHP: 350
+  damage: 19
+  maxHP: 700
+  currentHP: 700
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

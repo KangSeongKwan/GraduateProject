@@ -49,8 +49,8 @@ MonoBehaviour:
   unitName: White Pawn1
   unitLevel: 9
   damage: 5
-  maxHP: 170
-  currentHP: 170
+  maxHP: 220
+  currentHP: 220
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

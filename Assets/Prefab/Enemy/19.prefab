@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Knight1
   unitLevel: 20
-  damage: 13
-  maxHP: 300
-  currentHP: 300
+  damage: 15
+  maxHP: 550
+  currentHP: 550
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

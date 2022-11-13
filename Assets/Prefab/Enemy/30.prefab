@@ -49,8 +49,8 @@ MonoBehaviour:
   unitName: White King
   unitLevel: 31
   damage: 40
-  maxHP: 700
-  currentHP: 700
+  maxHP: 2000
+  currentHP: 2000
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

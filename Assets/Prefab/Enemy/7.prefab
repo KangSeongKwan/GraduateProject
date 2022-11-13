@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Dark Pawn8
   unitLevel: 8
-  damage: 3
-  maxHP: 160
-  currentHP: 160
+  damage: 5
+  maxHP: 200
+  currentHP: 200
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

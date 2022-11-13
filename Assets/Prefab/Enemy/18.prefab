@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Rook2
   unitLevel: 19
-  damage: 10
-  maxHP: 280
-  currentHP: 280
+  damage: 13
+  maxHP: 500
+  currentHP: 500
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Bishop1
   unitLevel: 24
-  damage: 18
-  maxHP: 370
-  currentHP: 370
+  damage: 20
+  maxHP: 750
+  currentHP: 750
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978

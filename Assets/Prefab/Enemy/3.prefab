@@ -49,8 +49,8 @@ MonoBehaviour:
   unitName: Dark Pawn4
   unitLevel: 4
   damage: 3
-  maxHP: 85
-  currentHP: 85
+  maxHP: 110
+  currentHP: 110
   storeItemName: 
   ADDHeal: 0
 --- !u!61 &-4846197427895528978
