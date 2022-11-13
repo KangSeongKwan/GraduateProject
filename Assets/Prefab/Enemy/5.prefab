@@ -49,8 +49,8 @@ MonoBehaviour:
   unitName: Dark Pawn6
   unitLevel: 6
   damage: 8
-  maxHP: 120
-  currentHP: 120
+  maxHP: 140
+  currentHP: 140
   storeItemName: 
   maxHPItemName: 
   ADDHeal: 0
