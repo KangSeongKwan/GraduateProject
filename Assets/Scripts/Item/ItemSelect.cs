@@ -17,6 +17,7 @@ public class ItemSelect : MonoBehaviour
     Vector3 Ppos2;
     int SpawnObj;
     SoundManager SoundEffect;
+    int num = 0;
 
     private int count = 0;
 
@@ -42,7 +43,15 @@ public class ItemSelect : MonoBehaviour
         {
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
             Destroy(other.gameObject);
-            Invoke("CreateReward", 0.175f);   //충돌 시
+            num = Random.Range(1, 5);
+            if(num == 3)
+            {
+                Invoke("CreateRewardDebuff", 0.175f);   //충돌 시
+            }
+            else
+            {
+                Invoke("CreateReward", 0.175f);   //충돌 시
+            }
         }
 
         if (other.gameObject.tag == "store")
@@ -80,7 +89,23 @@ public class ItemSelect : MonoBehaviour
         InvokeRepeating("CardSound", 0.5f, 0.2f);
         count = 0;
     }
-    
+
+    public void CreateRewardDebuff()
+    {
+        GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowRewardDebuffItem();
+        WeightedItem = GameObject.Find("RandomCard").GetComponent<RandomCard>().rewardDebuffItems;
+        for (int i = 0; i < 3; i++)
+        {
+            items.Add(WeightedItem[i]);
+        }
+        Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
+        Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
+        Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+
+        InvokeRepeating("CardSound", 0.5f, 0.2f);
+        count = 0;
+    }
+
     public void CreateSpecial()
     {
         GameObject.Find("RandomCard").GetComponent<RandomCard>().ShowArtifactItem();

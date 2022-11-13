@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour
     public int EnemyHP = 0;
 	public int i;
 	BattleCamActiver battleCam;
+	int num = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -122,7 +123,15 @@ public class BattleSystem : MonoBehaviour
 			Bcount.battleCount++;
 			if (Bcount.battleCount >= 3)
 			{
-				GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
+				num = Random.Range(1, 5);
+				if(num == 3)
+                {
+					GameObject.Find("player").GetComponent<ItemSelect>().CreateRewardDebuff();
+				}
+				else
+                {
+					GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
+				}
 				Bcount.battleCount = 0;
 			}
 			dialogueText.text = "You won the battle!";
