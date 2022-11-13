@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour
     public int EnemyHP = 0;
 	public int i;
 	BattleCamActiver battleCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator SetupBattle()
 	{
 		GameObject.Find("Light2D").SetActive(false);
+		GameObject.Find("count").SetActive(false);
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = GameObject.Find("PlayerStat").GetComponent<Unit>();
 		GameObject enemyGO = Instantiate(EnemyList[i], enemyBattleStation);
@@ -114,6 +116,7 @@ public class BattleSystem : MonoBehaviour
 	void EndBattle()
 	{
 		BattleCount Bcount = GameObject.Find("BattleCount").GetComponent<BattleCount>();
+		GameObject.Find("Canvas").transform.Find("count").gameObject.SetActive(true);
 		if (state == BattleState.WON)
 		{
 			Bcount.battleCount++;
