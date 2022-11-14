@@ -9,11 +9,23 @@ public class player_random : MonoBehaviour
     public Text count_text;
     SoundManager SoundEffect;
     int Randomobj;
+    public GameObject[] dice;
+    GameObject diceprefab;
+    Vector3 trans;
+    public bool Dice = true;
 
     void Update()
     {
         count_text.text = move_point.ToString();
+        trans = gameObject.transform.position + new Vector3(0, 1f, 0);
+        if (move_point == 0) // µ¹±â
+        {
+            Dice = true;
+        }
+        else
+            Dice = false;
         click_space();
+
     }
     void click_space()
     {
@@ -24,6 +36,7 @@ public class player_random : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     move_point = Random.Range(1, 7);
+                    roll_ani(move_point);
                     GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
                     Randomobj = Random.Range(1, 4);
 
@@ -47,5 +60,64 @@ public class player_random : MonoBehaviour
                 }
             }
         }
+    }
+    void roll_ani(int num)
+    {
+        switch (num)
+        {
+            case 1:
+                diceprefab = Instantiate(dice[0], trans, Quaternion.identity);
+                break;
+            case 2:
+                diceprefab = Instantiate(dice[1], trans, Quaternion.identity);
+                break;
+            case 3:
+                diceprefab = Instantiate(dice[2], trans, Quaternion.identity);
+                break;
+            case 4:
+                diceprefab = Instantiate(dice[3], trans, Quaternion.identity);
+                break;
+            case 5:
+                diceprefab = Instantiate(dice[4], trans, Quaternion.identity);
+                break;
+            case 6:
+                diceprefab = Instantiate(dice[5], trans, Quaternion.identity);
+                break;
+        }
+    }
+    public void click_Dice()
+    {
+        if (roll)
+        {
+            if (move_point == 0)
+            {
+                    move_point = Random.Range(1, 7);
+                    roll_ani(move_point);
+                    GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
+                    Randomobj = Random.Range(1, 4);
+
+                    switch (Randomobj)
+                    {
+                        case 1:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice1");
+                            break;
+
+                        case 2:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice2");
+                            break;
+
+                        case 3:
+                            SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+                            SoundEffect.SFXPlay("audioDice3");
+                            break;
+                    }
+                }
+        }
+    }
+    void Del_dice()
+    {
+        Destroy(diceprefab);
     }
 }

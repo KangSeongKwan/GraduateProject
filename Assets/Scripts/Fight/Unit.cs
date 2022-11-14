@@ -54,21 +54,19 @@ public class Unit : MonoBehaviour
 			switch (a)
 			{
 				case 9:
-					currentHP -= (maxHP / 10) * 5;
+					currentHP -= 30;
 					break;
 				case 8:
 				case 7:
 				case 6:
 				case 5:
-					currentHP -= (maxHP / 10) * 4;
+					currentHP -= 25;
 					break;
 				case 4:
 				case 3:
 				case 2:
-					currentHP -= (maxHP / 10) * 3;
-					break;
 				case 1:
-					currentHP -= 10;
+					currentHP -= 20;
 					break;
 			}
 		}
@@ -111,8 +109,8 @@ public class Unit : MonoBehaviour
     {
 		maxHPItemName = GameObject.Find("player").GetComponent<PlayerClickItem>().clickItemName;
 		int a = int.Parse(maxHPItemName.Substring(10, 2));
-		switch(a)
-        {
+		switch (a)
+		{
 			case 10:
 				maxHP += 10;
 				break;

@@ -31,7 +31,6 @@ public class RandomCard : MonoBehaviour
         }
         Debug.Log("Weight Insert Succeed");
     }
-
     public void ShowArtifactItem()
     {
         for (int i = 0; i < 3; i++)
@@ -40,7 +39,6 @@ public class RandomCard : MonoBehaviour
         }
         Debug.Log("Weight Insert Succeed");
     }
-
     public void ShowRewardDebuffItem()
     {
         for (int i = 0; i < 3; i++)

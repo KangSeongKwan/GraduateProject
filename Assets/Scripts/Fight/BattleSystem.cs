@@ -20,29 +20,35 @@ public class BattleSystem : MonoBehaviour
 	Unit enemyUnit;
 	SoundManager SoundEffect;
 	public Text dialogueText;
-
+	public Vector3 playerPosition;
+	public Vector3 enemyPosition;
 	public BattleHUD playerHUD;
 	public BattleHUD enemyHUD;
-
+	public GameObject playerGO;
+	public GameObject enemyGO;
 	public BattleState state;
     public int EnemyHP = 0;
 	public int i;
 	BattleCamActiver battleCam;
-	int num = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
 		GameObject.Find("Battle System").SetActive(false);
+
     }
 
 	IEnumerator SetupBattle()
 	{
+		Vector3 plusPos = new Vector3(0, 2, 0);
+		playerPosition = playerBattleStation.transform.position + plusPos;
+		enemyPosition = enemyBattleStation.transform.position + plusPos;
 		GameObject.Find("Light2D").SetActive(false);
 		GameObject.Find("count").SetActive(false);
-		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+		playerGO = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
 		playerUnit = GameObject.Find("PlayerStat").GetComponent<Unit>();
-		GameObject enemyGO = Instantiate(EnemyList[i], enemyBattleStation);
+		enemyGO = Instantiate(EnemyList[i], enemyPosition, Quaternion.identity);
 		enemyUnit = enemyGO.GetComponent<Unit>();
 
 		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
@@ -58,6 +64,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerAttack()
 	{
 		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+		playerGO.GetComponent<Player>().Player_ATK();
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
         BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();
         enemyHUD.SetHP(enemyUnit.currentHP);
@@ -91,16 +98,14 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator EnemyTurn()
 	{
-		dialogueText.text = enemyUnit.unitName + " attacks! (damage : " + enemyUnit.damage + ")";
+		dialogueText.text = enemyUnit.unitName + "attacks! (damage : " + enemyUnit.damage + ")";
+		enemyGO.GetComponent<Enemy>().Enemy_ATK();
 		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 		SoundEffect.SFXPlay("audioEAttack");
-		yield return new WaitForSeconds(1f);
-
 		bool isDead = playerUnit.TakeEdamage(enemyUnit.damage);
-
 		playerHUD.SetHP(playerUnit.currentHP);
 
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(2f);
 
 		if(isDead)
 		{
@@ -116,30 +121,26 @@ public class BattleSystem : MonoBehaviour
 
 	void EndBattle()
 	{
-		BattleCount Bcount = GameObject.Find("BattleCount").GetComponent<BattleCount>();
-		GameObject.Find("Canvas").transform.Find("count").gameObject.SetActive(true);
-		if (state == BattleState.WON)
+		if(state == BattleState.WON)
 		{
-			Bcount.battleCount++;
-			if (Bcount.battleCount >= 3)
-			{
-				num = Random.Range(1, 5);
-				if(num == 3)
-                {
-					GameObject.Find("player").GetComponent<ItemSelect>().CreateRewardDebuff();
-				}
-				else
-                {
-					GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
-				}
-				Bcount.battleCount = 0;
-			}
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
+			GameObject.Find("Canvas").transform.Find("count").gameObject.SetActive(true);
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
 			GameObject.Find("LIGHT2D").transform.Find("Light2D").gameObject.SetActive(true);
-			GameObject.Find("player").GetComponent<Click_Move>().click = true;
-			GameObject.Find("player").GetComponent<player_random>().roll = true;
+			GameObject.Find("BattleCount").GetComponent<BattleCount>().battleCount++;
+			if (GameObject.Find("BattleCount").GetComponent<BattleCount>().battleCount == 3)
+			{
+				GameObject.Find("player").GetComponent<ItemSelect>().CreateReward();
+				GameObject.Find("BattleCount").GetComponent<BattleCount>().battleCount = 0;
+			}
+            else
+            {
+				GameObject.Find("player").GetComponent<Click_Move>().click = true;
+				GameObject.Find("player").GetComponent<player_random>().roll = true;
+			}
+			Destroy(playerGO);
+			Destroy(enemyGO);
 		}
 		else if (state == BattleState.LOST)
 		{
@@ -158,6 +159,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerHeal()
 	{
 		playerUnit.Heal();
+		playerGO.GetComponent<Player>().Player_HEAL();
 		SoundEffect = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 		SoundEffect.SFXPlay("audioPHeal");
 		BattleDamageCalc BDC = GameObject.Find("Battle System").GetComponent<BattleDamageCalc>();

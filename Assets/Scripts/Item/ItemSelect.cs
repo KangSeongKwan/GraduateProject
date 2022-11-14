@@ -18,7 +18,6 @@ public class ItemSelect : MonoBehaviour
     int SpawnObj;
     SoundManager SoundEffect;
     int num = 0;
-
     private int count = 0;
 
     void Start()
@@ -44,7 +43,7 @@ public class ItemSelect : MonoBehaviour
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
             Destroy(other.gameObject);
             num = Random.Range(1, 5);
-            if(num == 3)
+            if (num == 3)
             {
                 Invoke("CreateRewardDebuff", 0.175f);   //Ãæµ¹ ½Ã
             }
@@ -72,6 +71,7 @@ public class ItemSelect : MonoBehaviour
             Destroy(Instantiates[i]);
         }
         items.Clear();
+        
     }
 
     public void CreateReward()
