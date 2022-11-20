@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Pawn1
   unitLevel: 9
-  damage: 11
-  maxHP: 220
-  currentHP: 220
+  damage: 5
+  maxHP: 20
+  currentHP: 20
   storeItemName: 
   maxHPItemName: 
   ADDHeal: 0
@@ -157,7 +157,7 @@ Animator:
   m_GameObject: {fileID: 5046871492963100558}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: faeeea5e45fd5b84d8f21c8795536d8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

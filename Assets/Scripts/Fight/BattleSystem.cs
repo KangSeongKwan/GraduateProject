@@ -30,6 +30,8 @@ public class BattleSystem : MonoBehaviour
     public int EnemyHP = 0;
 	public int i;
 	BattleCamActiver battleCam;
+	public Button dice;
+	public Image UI;
 
 
     // Start is called before the first frame update
@@ -126,6 +128,8 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You won the battle!";
 			GameObject.Find("CameraManager").GetComponent<CameraManager>().mainCameraOn();
 			GameObject.Find("Canvas").transform.Find("count").gameObject.SetActive(true);
+			GameObject.Find("Canvas").transform.Find("Dice 1").gameObject.SetActive(true);
+			GameObject.Find("Canvas").transform.Find("HP_MP_GUI").gameObject.SetActive(true);
 			GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = true;
 			GameObject.Find("LIGHT2D").transform.Find("Light2D").gameObject.SetActive(true);
 			GameObject.Find("BattleCount").GetComponent<BattleCount>().battleCount++;

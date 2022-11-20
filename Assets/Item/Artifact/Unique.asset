@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Unique
   m_EditorClassIdentifier: 
   itemName: Unique
-  itemImage: {fileID: 21300000, guid: 3805393e7e15ffa4c828c03944fd8800, type: 3}
+  itemImage: {fileID: 21300000, guid: 7bc9f56e20b6e4b42913f6b1c1619805, type: 3}
   item: {fileID: 0}
   abc: '*5'
+  itemDesc: "Unique \uB4F1\uAE09\uC758 \uC720\uBB3C\n\uC655\uC758 \uD798\uC774 \uB290\uAEF4\uC9C0\uBA70
+    \n\uC790\uC2E0\uC758 \uACF5\uACA9\uB825\uC774 \uC9DD\uC218\uBA74\n\uACF5\uACA9\uB825\uC744
+    500% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
   rank: Even
   condition: Even
   tag: artifact

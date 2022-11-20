@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Black Queen
   unitLevel: 28
-  damage: 50
-  maxHP: 1000
-  currentHP: 1000
+  damage: 5
+  maxHP: 30
+  currentHP: 30
   storeItemName: 
   maxHPItemName: 
   ADDHeal: 0

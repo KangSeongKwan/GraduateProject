@@ -23,19 +23,19 @@ public class Switch : MonoBehaviour
         if (Cnum1 != -1 && ChangeCnt == 0)
         {
             ChangeCnt = 1;
+            GameObject.Find("Inventory").GetComponent<Inventory>().slots[Cnum1].color_on();
 
         }
         else if (Cnum2 != -1 && ChangeCnt == 1)
         {
             ChangeCnt = 2;
+            GameObject.Find("Inventory").GetComponent<Inventory>().slots[Cnum2].color_on();
         }
         else if (ChangeCnt == 2)
         {
             OK_Button_swap.gameObject.SetActive(true);
             No_Button.gameObject.SetActive(true);
         }
-
-
     }
 
     void swap_all(int a, int b, List<Item> item_Item, List<string> item_string)
@@ -73,6 +73,8 @@ public class Switch : MonoBehaviour
     }
     public void Button_off()
     {
+        GameObject.Find("Inventory").GetComponent<Inventory>().slots[Cnum1].color_off();
+        GameObject.Find("Inventory").GetComponent<Inventory>().slots[Cnum2].color_off();
         OK_Button_swap.gameObject.SetActive(false);
         No_Button.gameObject.SetActive(false);
         ChangeCnt = 0;

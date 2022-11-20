@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Epic
   m_EditorClassIdentifier: 
   itemName: Epic
-  itemImage: {fileID: 21300000, guid: 8569be4628a47e5469d14b90b6388722, type: 3}
+  itemImage: {fileID: 21300000, guid: 3d81a1c3abb2dee4a957c6bdbc1d02f1, type: 3}
   item: {fileID: 0}
   abc: +8
+  itemDesc: "Epic \uB4F1\uAE09\uC758 \uC720\uBB3C\n\uAE30\uB9C8\uBCD1\uC758 \uD798\uC774
+    \uB290\uAEF4\uC9C0\uBA70 \n\uC790\uC2E0\uC758 \uACF5\uACA9\uB825\uC774 \uC9DD\uC218\uBA74\n\uACF5\uACA9\uB825\uC774
+    8 \uC99D\uAC00\uD55C\uB2E4."
   rank: Even
   condition: Even
   tag: artifact

@@ -19,6 +19,10 @@ public class ItemSelect : MonoBehaviour
     SoundManager SoundEffect;
     int num = 0;
     private int count = 0;
+    public GameObject rewardBorad;
+    public GameObject shopBorad;
+    public GameObject ArtBord;
+    GameObject Borad;
 
     void Start()
     {
@@ -45,11 +49,11 @@ public class ItemSelect : MonoBehaviour
             num = Random.Range(1, 5);
             if (num == 3)
             {
-                Invoke("CreateRewardDebuff", 0.175f);   //Ãæµ¹ ½Ã
+                Invoke("CreateRewardDebuff", 0.175f);   //ï¿½æµ¹ ï¿½ï¿½
             }
             else
             {
-                Invoke("CreateReward", 0.175f);   //Ãæµ¹ ½Ã
+                Invoke("CreateReward", 0.175f);   //ï¿½æµ¹ ï¿½ï¿½
             }
         }
 
@@ -70,6 +74,7 @@ public class ItemSelect : MonoBehaviour
         {
             Destroy(Instantiates[i]);
         }
+        Destroy(Borad);
         items.Clear();
         
     }
@@ -85,6 +90,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(rewardBorad, Ppos1, Quaternion.identity);
 
         InvokeRepeating("CardSound", 0.5f, 0.2f);
         count = 0;
@@ -101,6 +107,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(rewardBorad, Ppos1, Quaternion.identity);
 
         InvokeRepeating("CardSound", 0.5f, 0.2f);
         count = 0;
@@ -117,6 +124,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(ArtBord, Ppos1, Quaternion.identity);
         GameObject.Find("player").GetComponent<Click_Move>().click = false;
         InvokeRepeating("CardSound", 0.5f, 0.2f);
 
@@ -134,6 +142,7 @@ public class ItemSelect : MonoBehaviour
         Instantiates[0] = Instantiate(items[0], Ppos0, Quaternion.identity);
         Instantiates[1] = Instantiate(items[1], Ppos1, Quaternion.identity);
         Instantiates[2] = Instantiate(items[2], Ppos2, Quaternion.identity);
+        Borad = Instantiate(shopBorad, Ppos1, Quaternion.identity);
     }
 
     public void CardSound()
@@ -145,5 +154,9 @@ public class ItemSelect : MonoBehaviour
         {
             CancelInvoke("CardSound");
         }
+    }
+    public void Special()
+    {
+        Invoke("CreateSpecial", 0.175f);
     }
 }

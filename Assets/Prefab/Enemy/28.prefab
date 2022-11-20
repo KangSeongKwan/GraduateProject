@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Queen
   unitLevel: 29
-  damage: 60
-  maxHP: 2000
-  currentHP: 2000
+  damage: 5
+  maxHP: 30
+  currentHP: 30
   storeItemName: 
   maxHPItemName: 
   ADDHeal: 0

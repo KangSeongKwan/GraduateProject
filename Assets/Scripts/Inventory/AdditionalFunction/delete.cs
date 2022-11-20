@@ -21,6 +21,7 @@ public class delete : MonoBehaviour
     {
         if (Changedel == 1)
         {
+            GameObject.Find("Inventory").GetComponent<Inventory>().slots[dnum].color_on();
             OK_Button_delete.gameObject.SetActive(true);
             No_Button_delete.gameObject.SetActive(true);
         }
@@ -41,6 +42,7 @@ public class delete : MonoBehaviour
     }
     public void delete_button_on()
     {
+        GameObject.Find("Inventory").GetComponent<Inventory>().slots[dnum].color_off();
         del(dnum, GameObject.Find("Inventory").GetComponent<Inventory>().items, GameObject.Find("player").GetComponent<PlayerClickItem>().item_array);
         GameObject.Find("player").GetComponent<EnemyContact>().delete_on = false;
         OK_Button_delete.gameObject.SetActive(false);
@@ -54,6 +56,7 @@ public class delete : MonoBehaviour
     {
         OK_Button_delete.gameObject.SetActive(false);
         No_Button_delete.gameObject.SetActive(false);
+        GameObject.Find("Inventory").GetComponent<Inventory>().slots[dnum].color_off();
         Changedel = 0;
     }
     public void DeleteSound()

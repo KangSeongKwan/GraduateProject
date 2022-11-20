@@ -51,9 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: White Bishop1
   unitLevel: 26
-  damage: 45
-  maxHP: 850
-  currentHP: 850
+  damage: 5
+  maxHP: 30
+  currentHP: 30
   storeItemName: 
   maxHPItemName: 
   ADDHeal: 0

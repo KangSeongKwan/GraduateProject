@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryActive : MonoBehaviour
 {
@@ -36,6 +37,14 @@ public class InventoryActive : MonoBehaviour
                 {
                     SoundEffect.SFXPlay("audioCInven");
                     activeInventory = false;
+                    try
+                    {
+                    GameObject.Find("ToolTip_Outer").SetActive(false);
+                    }
+                    catch (NullReferenceException e)
+                    {
+                    Debug.Log("�������ϴ�. ���� �����Դϴ�.");
+                    }
                 }
             }
             if( enemy == true)

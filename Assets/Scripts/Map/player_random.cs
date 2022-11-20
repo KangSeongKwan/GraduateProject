@@ -12,13 +12,18 @@ public class player_random : MonoBehaviour
     public GameObject[] dice;
     GameObject diceprefab;
     Vector3 trans;
+    Vector3 spot;
     public bool Dice = true;
+    public int M_P = 0;
+    GameObject spotlight;
+    public GameObject asset_spotlight;
 
     void Update()
     {
         count_text.text = move_point.ToString();
         trans = gameObject.transform.position + new Vector3(0, 1f, 0);
-        if (move_point == 0) // µ¹±â
+        spot = gameObject.transform.position + new Vector3(0, 1.5f, 0);
+        if (move_point == 0) // ï¿½ï¿½ï¿½ï¿½
         {
             Dice = true;
         }
@@ -35,8 +40,8 @@ public class player_random : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    move_point = Random.Range(1, 7);
-                    roll_ani(move_point);
+                    M_P = Random.Range(1, 7);
+                    roll_ani(M_P);
                     GameObject.Find("PlayerStat").GetComponent<Unit>().currentHP -= 1;
                     Randomobj = Random.Range(1, 4);
 
@@ -63,6 +68,7 @@ public class player_random : MonoBehaviour
     }
     void roll_ani(int num)
     {
+        spotlight = Instantiate(asset_spotlight, spot, Quaternion.identity);
         switch (num)
         {
             case 1:
@@ -118,6 +124,7 @@ public class player_random : MonoBehaviour
     }
     void Del_dice()
     {
+        Destroy(spotlight);
         Destroy(diceprefab);
     }
 }

@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class SSlot : MonoBehaviour
+public class SSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] Image image;   //Image Component ÀúÀåÇÒ Àå¼Ò
+    [SerializeField] Image image;   //Image Component ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    private Item _item; //item Á¤º¸ÀÇ °ªÀ» ÀúÀå
-    public Item item //Item °´Ã¼¸¦ ¹Þ¾Æ¿Ã ¼ö ÀÖ´Â ½ºÅ©¸³Æ®
+    public ItemEffectDatabase theItemEffectDatabase;
+
+    public Item _item; //item ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Item item //Item ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®
     {
         get { return _item; }
         set
@@ -26,5 +29,17 @@ public class SSlot : MonoBehaviour
             }
         }
     }
-    
+
+    // ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½î°¥ ï¿½ï¿½ ï¿½ßµï¿½
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (_item != null)
+            theItemEffectDatabase.ShowToolTip(_item, transform.position);
+    }
+
+    // ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ßµï¿½
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        theItemEffectDatabase.HideToolTip();
+    }
 }

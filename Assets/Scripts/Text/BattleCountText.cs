@@ -9,7 +9,7 @@ public class BattleCountText : MonoBehaviour
     {
         BattleCount Bcount = GameObject.Find("BattleCount").GetComponent<BattleCount>();
         CameraManager CM = GameObject.Find("CameraManager").GetComponent<CameraManager>();
-        battleCount.text = "Battle Count : " + Bcount.battleCount.ToString();
+        battleCount.text = Bcount.battleCount.ToString();
         if (CM.mainCamera.enabled == true)
         {
             battleCount.enabled = true;

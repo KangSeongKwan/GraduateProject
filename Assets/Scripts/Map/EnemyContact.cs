@@ -29,7 +29,7 @@ public class EnemyContact : MonoBehaviour
                 GameObject.Find("player").GetComponent<player_random>().roll = false;
             }
             else
-                Debug.Log("¾Æ¹«°Íµµ ¾ø½À´Ï´Ù.");
+                Debug.Log("ï¿½Æ¹ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
         if (other.gameObject.tag == "Swap")
         {
@@ -43,12 +43,17 @@ public class EnemyContact : MonoBehaviour
                 GameObject.Find("player").GetComponent<player_random>().roll = false;
             }
             else
-                Debug.Log("ÀÎº¥Åä¸®¿¡ 2°³ÀÌ»óÀÇ ¾ÆÀÌÅÛÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
+                Debug.Log("ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ 2ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Õ´Ï´ï¿½.");
         }
         if (other.gameObject.tag == "Heal")
         {
             Destroy(other.gameObject);
             GameObject.Find("PlayerStat").GetComponent<Unit>().HealField();
+        }
+        if (other.gameObject.tag == "Artifact")
+        {
+            Destroy(other.gameObject);
+            GameObject.Find("player").GetComponent<ItemSelect>().Special();
         }
     }
 }

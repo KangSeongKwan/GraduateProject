@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] Image image;   //Image Component ÀúÀåÇÒ Àå¼Ò
+    [SerializeField] Image image;   //Image Component ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-    private Item _item; //item Á¤º¸ÀÇ °ªÀ» ÀúÀå
-    public Item item //Item °´Ã¼¸¦ ¹Þ¾Æ¿Ã ¼ö ÀÖ´Â ½ºÅ©¸³Æ®
+    private Item _item; //item ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Item item //Item ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®
     {
         get { return _item; }
         set
@@ -25,6 +25,14 @@ public class Slot : MonoBehaviour
                 image.color = new Color(1, 1, 1, 0);
             }
         }
+    }
+    public void color_on()
+    {
+        image.color = new Color32(255, 255, 255, 150);
+    }
+    public void color_off()
+    {
+        image.color = new Color(1, 1, 1, 1);
     }
     
 }

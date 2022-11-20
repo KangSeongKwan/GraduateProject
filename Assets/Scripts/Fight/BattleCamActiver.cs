@@ -16,10 +16,12 @@ public class BattleCamActiver : MonoBehaviour
             Destroy(gameObject);
             GameObject.Find("CameraManager").GetComponent<CameraManager>().subCameraOn();
             GameObject.Find("player").GetComponent<PlayerClickItem>().enabled = false;
+            GameObject.Find("Dice 1").gameObject.SetActive(false);
+            GameObject.Find("HP_MP_GUI").gameObject.SetActive(false);
             GameObject.Find("BattleSYSTEM").transform.Find("Battle System").gameObject.SetActive(true);
             GameObject.Find("Battle System").GetComponent<BattleSystem>().i = Ename;
             GameObject.Find("Battle System").GetComponent<BattleSystem>().StartBattle();
-            Debug.Log("ÀüÅõ½ÃÀÛ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             GameObject.Find("player").GetComponent<Click_Move>().click = false;
             GameObject.Find("player").GetComponent<player_random>().roll = false;
         }
